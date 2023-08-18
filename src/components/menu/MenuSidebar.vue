@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue"
-import Glass from "../icons/IconGlass.vue"
+import IconMenu from "../icons/IconMenu.vue"
 
 let menuState = ref(false)
 const toggleMenu = () => {
@@ -11,9 +11,7 @@ const toggleMenu = () => {
 <template>
   <div class="cont-menu">
     <!-- <img class="menu-icon" :src="MeniSp" alt="menu" @click="$router.push('/')" /> -->
-
-    <Glass class="menu-icon" @click="toggleMenu()" />
-
+    <IconMenu class="icon" :class="{ 'icon-rotate': menuState }" @click="toggleMenu()" />
     <Transition name="list">
       <ul class="menu-list" v-show="menuState">
         <li class="menu-item">
@@ -38,12 +36,25 @@ const toggleMenu = () => {
   padding: 2rem;
 }
 
-
-.menu-icon {
-  width: 1.7rem;
-  margin-left: 0.5rem;
+.icon {
+  transform: rotate(0deg);
+  transition: all 0.3s ease-out;
 }
 
+.icon:hover {
+  transform: rotate(0deg) scale(1.1);
+  transition: all 0.3s ease-out;
+}
+
+.icon-rotate {
+  transform: rotate(90deg);
+  transition: all 0.3s ease-out;
+}
+
+.icon-rotate:hover {
+  transform: rotate(90deg);
+  transition: all 0.3s ease-out;
+}
 
 .menu-list {
   list-style: none;

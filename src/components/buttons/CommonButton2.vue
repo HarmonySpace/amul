@@ -3,13 +3,30 @@ const props = defineProps({
   msg: {
     type: String,
     default: "Botón",
+  },
+  fz: {
+    type: String,
+    default: "calc(0.5rem + 1vw)",
+  },
+  br: {
+    type: String,
+    default: "10px",
+  },
+  bg: {
+    type: String,
+    default: "var(--acn)",
   }
 })
+const br = "border-radius: " + props.br + ";"
+const bg = "background-color: " + props.bg + ";"
+const btn = br + bg
+const fz = "font-size: " + props.fz + ";"
+const text = fz
 </script>
 
 <template>
-  <button class="cb-cont" type="button">
-    <span class="cb-text">{{ props.msg }}</span>
+  <button :style="btn" class="cb-cont" type="button">
+    <span :style="text" class="cb-text">{{ props.msg }}</span>
   </button>
 </template>
 
@@ -18,18 +35,18 @@ const props = defineProps({
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem;
   outline: none;
   border: none;
-  border-radius: 0.5rem;
   background-color: var(--acn);
-  transition: all 0.2s;
+  transition: all 0.1s ease-out;
 }
 
 .cb-cont:hover {
   cursor: pointer;
   transform: scale(1.1);
-  box-shadow: 0 0.4rem 1rem var(--sha2);
+  box-shadow: 0 0.4rem 2rem var(--sha2);
+  transition: all 0.1s ease-out;
 }
 
 .cb-cont:hover .cb-text {

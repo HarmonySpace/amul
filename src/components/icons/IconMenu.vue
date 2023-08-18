@@ -27,18 +27,17 @@ const padding = "padding: " + props.pd + ";"
 const borderRadius = "border-radius: " + props.br + ";"
 const background = "background-color: " + props.bg + ";"
 const icon = size + padding + borderRadius + background
-
 </script>
 
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 109.28 109.28" class="icon" :stroke="color" :style="icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 93.65 65.89" class="icon" :stroke="color" :style="icon">
     <g id="a" />
     <g id="b">
       <g id="c">
         <g>
-          <circle class="d" cx="44.39" cy="44.39" r="38.67" />
-          <line class="d" x1="71.74" y1="71.74" x2="103.56" y2="103.56" />
-          <path class="d" d="M44.39,22.56c6.03,0,11.49,2.44,15.44,6.39s6.39,9.41,6.39,15.44" />
+          <line class="d" x1="7.66" y1="7.66" x2="85.82" y2="7.66" />
+          <line class="d" x1="7.83" y1="32.94" x2="85.99" y2="32.94" />
+          <line class="d" x1="7.83" y1="58.23" x2="85.99" y2="58.23" />
         </g>
       </g>
     </g>
