@@ -4,8 +4,13 @@ const routes: RouteRecordRaw[] = [
   {
     alias: "/search",
     path: "/",
-    name: "Search",
-    component: () => import("../views/Search.vue"),
+    name: "SearchMonograph",
+    component: () => import("../views/SearchMonograph.vue"),
+  },
+  {
+    path: "/addmonograph",
+    name: "AddMonograph",
+    component: () => import("../views/AddMonograph.vue"),
   },
 ];
 

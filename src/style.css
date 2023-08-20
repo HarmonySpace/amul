@@ -34,8 +34,23 @@ h1 {
   font-size: calc(1rem + 5vw);
 }
 p {
-  font-size: calc(0.5rem + 1vw);
+  font-size: calc(0.3rem + 1vw);
 }
 span {
   font-size: calc(0.1rem + 1vw);
+}
+a {
+  text-decoration: none;
+  font-size: calc(0.3rem + 1vw);
+}
+.router-link,
+.router-link-active,
+.router-link-exact-active,
+.router-link-disabled {
+  font-size: calc(0.5rem + 1vw);
+  outline: none;
+  text-decoration: none;
+}
+.router-link-active {
+  color: var(--acn);
 }

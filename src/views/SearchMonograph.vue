@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import InputSearch from "../components/inputs/InputSearch.vue";
 import CommonButton2 from "../components/buttons/CommonButton2.vue";
+
 </script>
 
 <template>

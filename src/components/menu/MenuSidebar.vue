@@ -1,24 +1,28 @@
 <script setup lang="ts">
 import { ref } from "vue"
+import { useRouter } from "vue-router"
 import IconMenu from "../icons/IconMenu.vue"
 
 let menuState = ref(false)
+const router = useRouter()
 const toggleMenu = () => {
   menuState.value = !menuState.value;
+}
+const navegateTo = (to: string) => {
+  router.push(to)
 }
 </script>
 
 <template>
   <div class="cont-menu">
-    <!-- <img class="menu-icon" :src="MeniSp" alt="menu" @click="$router.push('/')" /> -->
-    <IconMenu class="icon" :class="{ 'icon-rotate': menuState }" @click="toggleMenu()" />
+    <IconMenu class="icon" :class="{ 'icon-rotate': menuState }" @click="toggleMenu()" cl="#ffffff" />
     <Transition name="list">
       <ul class="menu-list" v-show="menuState">
-        <li class="menu-item">
-          <router-link to="/">Buscar</router-link>
+        <li class="menu-item" @click="navegateTo('/')">
+          <router-link class="menu-link" ref="buscar" to="/">Buscar</router-link>
         </li>
-        <li class="menu-item">
-          <router-link to="/">Añadir</router-link>
+        <li class="menu-item" @click="navegateTo('/addmonograph')">
+          <router-link class="menu-link" ref="añadir" to="/addmonograph">Añadir</router-link>
         </li>
       </ul>
     </Transition>
@@ -58,8 +62,11 @@ const toggleMenu = () => {
 
 .menu-list {
   list-style: none;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  padding: 2rem;
   transition: all 0.5s;
+  border-radius: 25px;
+  background-color: var(--bg);
 }
 
 .list-enter-active,
@@ -85,17 +92,6 @@ const toggleMenu = () => {
   cursor: pointer;
   color: var(--acn);
   transform: translateX(0.5rem);
-  background-color: var(--bg)
-}
-
-
-
-
-.router-link,
-.router-link-active,
-.router-link-exact-active,
-.router-link-disabled {
-  text-decoration: none;
-  outline: none;
+  background-color: var(--bg2)
 }
 </style>
