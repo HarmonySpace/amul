@@ -26,10 +26,15 @@ const props = defineProps({
   padding: 1rem calc(1rem + 1vw);
   width: 100%;
   font-size: calc(0.3rem + 1vw);
-  outline: 0;
+  outline: 0 solid var(--acn);
   border: 0;
   border-radius: 20px;
   background-color: var(--bg);
+  transition: outline 0.1s ease-out;
+}
+
+.input:focus {
+  outline: 2px solid var(--acn);
 }
 
 .icon-glass {

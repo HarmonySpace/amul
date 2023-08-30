@@ -15,7 +15,7 @@ const navegateTo = (to: string) => {
 
 <template>
   <div class="cont-menu">
-    <IconMenu class="icon" :class="{ 'icon-rotate': menuState }" @click="toggleMenu()" cl="#ffffff" />
+    <IconMenu class="icon" :class="{ 'icon-rotate': menuState }" @click="toggleMenu()" sz="1.5rem" />
     <Transition name="list">
       <ul class="menu-list" v-show="menuState">
         <li class="menu-item" @click="navegateTo('/')">
@@ -37,34 +37,34 @@ const navegateTo = (to: string) => {
   justify-content: center;
   align-items: start;
   flex-direction: column;
-  padding: 2rem;
+  padding: 3rem;
 }
 
 .icon {
   transform: rotate(0deg);
-  transition: all 0.3s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .icon:hover {
-  transform: rotate(0deg) scale(1.1);
-  transition: all 0.3s ease-out;
+  transform: rotate(0deg) scale(0.9);
+  transition: all 0.2s ease-out;
 }
 
 .icon-rotate {
   transform: rotate(90deg);
-  transition: all 0.3s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .icon-rotate:hover {
   transform: rotate(90deg);
-  transition: all 0.3s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .menu-list {
   list-style: none;
   margin-top: 1rem;
   padding: 2rem;
-  transition: all 0.5s;
+  transition: all 0.2s;
   border-radius: 25px;
   background-color: var(--bg);
 }

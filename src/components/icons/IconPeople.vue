@@ -73,10 +73,9 @@ const handleMouseLeave = () => {
 <template>
   <div class="icon-container" :style="[iconC, hoverShadown]" @mouseover="handleMouseHover" @mouseleave="handleMouseLeave">
     <svg id="icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" :style="icon">
-      <g id="menu">
-        <line class="cls-1" x1="27.23" y1="31.88" x2="72.67" y2="31.88" />
-        <line class="cls-1" x1="27.33" y1="50" x2="72.77" y2="50" />
-        <line class="cls-1" x1="27.33" y1="68.12" x2="72.77" y2="68.12" />
+      <g id="people">
+        <circle class="cls-1" cx="50" cy="33.93" r="9.28" />
+        <path class="cls-1" d="M30.51,73.53a19.49,19.49,0,1,1,39,0" />
       </g>
     </svg>
   </div>

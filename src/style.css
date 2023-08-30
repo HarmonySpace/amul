@@ -9,10 +9,14 @@
   --fr: #f6f6f6;
   --fr2: #ececec;
   --fr3: #aeaeae;
+  --fr4: #8e8e8e;
   --sha: #1d1b213a;
   --sha2: #001aff7a;
+  --sha3: #00c8947a;
   --acn: #001aff;
   --acn2: #047bff;
+  --acn3: #005bc3;
+  --sec: #00c894;
 }
 
 /* All components */
@@ -33,6 +37,10 @@ body {
 h1 {
   font-size: calc(1rem + 5vw);
 }
+h2 {
+  font-size: calc(1rem + 2.3vw);
+  color: var(--fr4);
+}
 p {
   font-size: calc(0.3rem + 1vw);
 }
@@ -42,6 +50,9 @@ span {
 a {
   text-decoration: none;
   font-size: calc(0.3rem + 1vw);
+}
+label {
+  font-size: calc(0.8rem + 1vw);
 }
 .router-link,
 .router-link-active,

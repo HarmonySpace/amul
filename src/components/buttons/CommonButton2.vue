@@ -15,6 +15,10 @@ const props = defineProps({
   bg: {
     type: String,
     default: "var(--acn)",
+  },
+  hv: {
+    type: String,
+    default: "inc",
   }
 })
 const br = "border-radius: " + props.br + ";"
@@ -44,7 +48,7 @@ const text = fz
 
 .cb-cont:hover {
   cursor: pointer;
-  transform: scale(1.1);
+  transform: scale(0.9);
   box-shadow: 0 0.4rem 2rem var(--sha2);
   transition: all 0.1s ease-out;
 }

@@ -1,8 +1,13 @@
 <script setup lang="ts">
+import { ref } from "vue";
 const props = defineProps({
   cl: {
     type: String,
     default: "#ffffff"
+  },
+  st: {
+    type: String,
+    default: "9px",
   },
   sz: {
     type: String,
@@ -10,7 +15,7 @@ const props = defineProps({
   },
   pd: {
     type: String,
-    default: "1rem",
+    default: "0.5rem",
   },
   br: {
     type: String,
@@ -20,46 +25,87 @@ const props = defineProps({
     type: String,
     default: "var(--acn)",
   },
+  bg2: {
+    type: String,
+    default: "var(--acn)",
+  },
+  sha: {
+    type: String,
+    default: "var(--sha2)",
+  },
+  sha2: {
+    type: String,
+    default: "var(--acn)",
+  }
 })
-const color = props.cl
+const color = "stroke: " + props.cl + ";"
+let stroke = ""
+if (props.st == "bold") {
+  stroke = "stroke-width: 12px;"
+} else if (props.st == "thin") {
+  stroke = "stroke-width: 7px;"
+} else if (props.st == "ligth") {
+  stroke = "stroke-width: 5px;"
+} else if (props.st == "normal") {
+  stroke = "stroke-width: 9px;"
+} else {
+  stroke = "stroke-width: " + props.st + ";"
+}
 const size = "width: calc(" + props.sz + " + 1vw);height: calc(" + props.sz + " + 1vw);"
 const padding = "padding: " + props.pd + ";"
 const borderRadius = "border-radius: " + props.br + ";"
-const background = "background-color: " + props.bg + ";"
-const icon = size + padding + borderRadius + background
+// const background = "background-color: " + props.bg + ";"
+const background = "background-image: linear-gradient(to right top," + props.bg + "," + props.bg2 + ");"
+const boxShadow = "box-shadow: 0 0 2rem " + props.sha + ";"
 
+const icon = size + stroke + color
+const iconC = padding + borderRadius + background + boxShadow
+
+const hoverShadown = ref("")
+const handleMouseHover = () => {
+  hoverShadown.value = "box-shadow: 0 0 2rem " + props.sha2 + ";"
+}
+const handleMouseLeave = () => {
+  hoverShadown.value = ""
+}
 </script>
 
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 109.28 109.28" class="icon" :stroke="color" :style="icon">
-    <g id="a" />
-    <g id="b">
-      <g id="c">
-        <g>
-          <circle class="d" cx="44.39" cy="44.39" r="38.67" />
-          <line class="d" x1="71.74" y1="71.74" x2="103.56" y2="103.56" />
-          <path class="d" d="M44.39,22.56c6.03,0,11.49,2.44,15.44,6.39s6.39,9.41,6.39,15.44" />
-        </g>
+  <div class="icon-container" :style="[iconC, hoverShadown]" @mouseover="handleMouseHover" @mouseleave="handleMouseLeave">
+    <svg id="icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" :style="icon">
+      <g id="glass">
+        <circle class="cls-1" cx="43.62" cy="43.62" r="24.1" />
+        <line class="cls-1" x1="60.66" y1="60.66" x2="80.49" y2="80.49" />
+        <path class="cls-1" d="M43.62,30a13.59,13.59,0,0,1,13.6,13.61" />
       </g>
-    </g>
-  </svg>
+    </svg>
+  </div>
 </template>
 
 <style scoped>
-.d {
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.1s ease-in;
+  box-shadow: 0 0 2rem var(--acn);
+  height: 100%;
+}
+
+.cls-1 {
   fill: none;
   /* stroke: var(--fr); */
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 15.32px;
 }
 
 .icon {
-  box-shadow: 0 0 2rem var(--sha2);
+  cursor: pointer;
+  box-shadow: 0 0 2rem var(--sha);
   transition: all 0.1s ease-in;
 }
 
-.icon:hover {
+.icon-container:hover {
   box-shadow: 0 0 2rem var(--acn);
   transform: scale(1.1);
   cursor: pointer;

@@ -73,12 +73,15 @@ const handleMouseLeave = () => {
 <template>
   <div class="icon-container" :style="[iconC, hoverShadown]" @mouseover="handleMouseHover" @mouseleave="handleMouseLeave">
     <svg id="icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" :style="icon">
-      <g id="menu">
-        <line class="cls-1" x1="27.23" y1="31.88" x2="72.67" y2="31.88" />
-        <line class="cls-1" x1="27.33" y1="50" x2="72.77" y2="50" />
-        <line class="cls-1" x1="27.33" y1="68.12" x2="72.77" y2="68.12" />
+      <g id="docs">
+        <rect class="cls-1" x="28.03" y="19.51" width="43.95" height="60.97" rx="6.32" />
+        <line class="cls-1" x1="38.91" y1="32.18" x2="61.09" y2="32.18" />
+        <line class="cls-1" x1="38.91" y1="44.06" x2="61.09" y2="44.06" />
+        <line class="cls-1" x1="38.91" y1="55.94" x2="61.09" y2="55.94" />
+        <line class="cls-1" x1="38.91" y1="67.82" x2="61.09" y2="67.82" />
       </g>
     </svg>
+
   </div>
 </template>
 
@@ -88,7 +91,7 @@ const handleMouseLeave = () => {
   justify-content: center;
   align-items: center;
   transition: all 0.1s ease-in;
-  /* box-shadow: 0 0 2rem var(--sha2); */
+  box-shadow: 0 0 2rem var(--acn);
   height: 100%;
 }
 
@@ -101,10 +104,12 @@ const handleMouseLeave = () => {
 
 .icon {
   cursor: pointer;
+  box-shadow: 0 0 2rem var(--sha);
   transition: all 0.1s ease-in;
 }
 
 .icon-container:hover {
+  box-shadow: 0 0 2rem var(--acn);
   transform: scale(1.1);
   cursor: pointer;
   transition: all 0.1s ease-in;
