@@ -35,10 +35,10 @@ const inputT1_3: InputTextData = { ph: "example@gmail.com", nm: "correo_t", lb: 
 const inputT1_4: InputTextData = { ph: "DD/MMM/AAAA", nm: "fecha_p", lb: "Fecha de entrega", lg: "medium", ty: "date" }
 const inputS1: SwitchData = { op1: "Inactivo", op2: "Activo" }
 const inputS1_2: SwitchData = { op1: "No inscrito", op2: "Inscrito" }
-const inputT2: InputText2Data = { ph1: "Jane", nm1: "nombre_s", lb1: "Nombres", ph2: "Doe", nm2: "apellido_s", lb2: "Apellidos" }
+const inputT2: InputText2Data = { ph1: "John", nm1: "nombre_s", lb1: "Nombres", ph2: "Doe", nm2: "apellido_s", lb2: "Apellidos" }
 const inputT2_2: InputText2Data = { ph1: "Ciencias y Tecnologías", nm1: "facultad_u", lb1: "Facultad", ph2: "Computación", nm2: "departamento_u", lb2: "Departamento" }
-const inputT2_3: InputText2Data = { ph1: "Jane", nm1: "nombre_t", lb1: "Nombres", ph2: "Doe", nm2: "apellido_t", lb2: "Apellidos" }
-const inputF1: InputFileData = { nm: "file_p", lb: "Seleccionar archivo", lg: "medium", fl: ".pdf" }
+const inputT2_3: InputText2Data = { ph1: "John", nm1: "nombre_t", lb1: "Nombres", ph2: "Doe", nm2: "apellido_t", lb2: "Apellidos" }
+const inputF1: InputFileData = { nm: "file_p", lb: "Seleccionar archivo", lg: "small", fl: ".pdf" }
 
 </script>
 
@@ -47,8 +47,8 @@ const inputF1: InputFileData = { nm: "file_p", lb: "Seleccionar archivo", lg: "m
   <section class="con">
     <div class="limited">
       <header class="header-con">
-        <h1>Push</h1>
-        <p>Agregar una nueva monografía</p>
+        <h1>Añadir</h1>
+        <p>Agregar una nueva monografía en el sistema con los datos solicitados</p>
       </header>
       <!-- group data -->
       <main class="main-con">

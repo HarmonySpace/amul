@@ -3,7 +3,7 @@
 /* Variables */
 :root {
   --bg: #111111;
-  --bg2: #1d1b21;
+  --bg2: #1c1c1c;
   --bg3: #3f3d44;
   --bg4: #5f5f62;
   --fr: #f6f6f6;
@@ -11,9 +11,9 @@
   --fr3: #aeaeae;
   --fr4: #8e8e8e;
   --sha: #1d1b213a;
-  --sha2: #001aff7a;
+  --sha2: #001aff7a;  
   --sha3: #00c8947a;
-  --acn: #001aff;
+  --acn: #0051ff;
   --acn2: #047bff;
   --acn3: #005bc3;
   --sec: #00c894;

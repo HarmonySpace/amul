@@ -12,12 +12,12 @@ const props = defineProps({
 
 let large = "";
 if (props.data.lg == "small") {
-  large = "width: " + "30%" + ";";
+  large = "width: 30%;";
 } else if (props.data.lg == "medium") {
-  large = "width: " + "50%" + ";";
+  large = "width: 50%;";
 }
 else {
-  large = "width: " + "100%" + ";";
+  large = "width: 100%;";
 }
 
 </script>

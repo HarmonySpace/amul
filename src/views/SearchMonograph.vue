@@ -8,8 +8,8 @@ import CommonButton2 from "../components/buttons/CommonButton2.vue";
   <section class="con">
     <form class="con-form">
       <label class="con-form-title">
-        <h1>UMM</h1>
-        <span>UNAN-León Monography Manager</span>
+        <h1>AMUL</h1>
+        <span>Administrador monográfico de la UNAN-León</span>
       </label>
       <InputSearch msg="Buscar por carnet" />
       <CommonButton2 msg="Buscar"></CommonButton2>
