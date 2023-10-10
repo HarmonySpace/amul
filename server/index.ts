@@ -16,4 +16,4 @@ console.log("   |//////////////   |-/");
 console.log("   |/////////////    |/");
 console.log("    ‾ ‾ ‾ ‾ ‾ ‾ ‾ ‾ ‾ ");
 console.log(" ");
-console.log("- - - -> SERVER RUNNING <- - - - ");
+console.log("Server running on port 3000");
