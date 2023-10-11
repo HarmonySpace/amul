@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, defineEmits } from "vue"
 interface Data {
   ph1: string,
   nm1: string,
@@ -10,23 +11,33 @@ interface Data {
 const props = defineProps({
   data: { type: Object as () => Data, default: () => ({ ph1: "", nm1: "", lb1: "", ph2: "", nm2: "", lb2: "" }) },
 })
+const emit = defineEmits(["input1", "input2"])
+
+let content1 = ref<string>("")
+let content2 = ref<string>("")
+  const handleInpu1 = () => {
+  emit("input1", content1.value)
+}
+const handleInput2 = () => {
+  emit("input2", content2.value)
+}
 </script>
 
 <template>
-  <section class="it-container">
+  <section class="it2-container">
     <div class="box">
       <label :for="props.data.nm1">{{ props.data.lb1 }}</label>
-      <input class="input" type="text" :id="props.data.nm1" :name="props.data.nm1" :placeholder="props.data.ph1">
+      <input @input="handleInpu1" v-model.trim="content1" class="input" type="text" :id="props.data.nm1" :name="props.data.nm1" :placeholder="props.data.ph1">
     </div>
     <div class="box">
       <label :for="props.data.nm2">{{ props.data.lb2 }}</label>
-      <input class="input" type="text" :id="props.data.nm2" :name="props.data.nm2" :placeholder="props.data.ph2">
+      <input @input="handleInput2" v-model.trim="content2" class="input" type="text" :id="props.data.nm2" :name="props.data.nm2" :placeholder="props.data.ph2">
     </div>
   </section>
 </template>
 
 <style scoped>
-.it-container {
+.it2-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,11 +45,11 @@ const props = defineProps({
   width: 100%;
 }
 
-.it-container .box:nth-child(1) {
+.it2-container .box:nth-child(1) {
   margin-right: 0.5rem;
 }
 
-.it-container .box:nth-child(2) {
+.it2-container .box:nth-child(2) {
   margin-left: 0.5rem;
 }
 

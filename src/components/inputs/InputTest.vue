@@ -1,20 +1,17 @@
 <script setup lang="ts">
-
 interface InputData {
   type: string[];
   label: string[];
   placeholder: string[];
   labelOff: boolean;
 }
-
 const props = defineProps({
   inputData: { type: Object as () => InputData, default: () => ({ type: [], label: [], placeholder: [], labelOff: true }) },
 })
-
 </script>
 
 <template>
-  <section class="cont">
+  <section class="it-container">
     <div class="element" v-for="index in props.inputData.label.length" :key="index">
       <label v-if="!props.inputData.labelOff" class="label">{{ props.inputData.label[index - 1] }}</label>
       <input class="input" :type="props.inputData.type[index - 1]"
@@ -24,7 +21,7 @@ const props = defineProps({
 </template>
 
 <style scoped>
-.cont {
+.it-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

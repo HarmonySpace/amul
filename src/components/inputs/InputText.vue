@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, defineEmits } from "vue"
 interface Data {
   ph: string;
   nm: string,
@@ -9,6 +10,7 @@ interface Data {
 const props = defineProps({
   data: { type: Object as () => Data, default: () => ({ ph: "", nm: "", lb: "", lg: "full", ty: "text" }) },
 })
+const emit = defineEmits(["input1"])
 
 let large = "";
 if (props.data.lg == "small") {
@@ -19,14 +21,16 @@ if (props.data.lg == "small") {
 else {
   large = "width: " + "100%" + ";";
 }
-
-
+const content = ref<string>("")
+const handleInput = () => {
+  emit("input1", content.value)
+}
 </script>
 
 <template>
   <label class="label" :for="props.data.nm">{{ props.data.lb }}</label>
-  <input :style="large" class="input" :type="props.data.ty" :id="props.data.nm" :name="props.data.nm"
-    :placeholder="props.data.ph">
+  <input @input="handleInput()" v-model.trim="content" :style="large" class="input" :type="props.data.ty" :id="props.data.nm" :name="props.data.nm"
+    :placeholder="props.data.ph"/>
 </template>
 
 <style scoped>
