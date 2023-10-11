@@ -24,6 +24,9 @@ const navegateTo = (to: string) => {
         <li class="menu-item" @click="navegateTo('/addmonograph')">
           <router-link class="menu-link" ref="añadir" to="/addmonograph">Añadir</router-link>
         </li>
+        <li class="menu-item" @click="navegateTo('/addstudent')">
+          <router-link class="menu-link" ref="añadir estudiante" to="/addstudent">Añadir estudiantes</router-link>
+        </li>
       </ul>
     </Transition>
 

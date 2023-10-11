@@ -2,7 +2,7 @@ import { RouteRecordRaw, createRouter, createWebHistory } from "vue-router";
 
 const routes: RouteRecordRaw[] = [
   {
-    alias: "/search",
+    alias: "/searchmonograph",
     path: "/",
     name: "SearchMonograph",
     component: () => import("../views/SearchMonograph.vue"),
@@ -11,6 +11,11 @@ const routes: RouteRecordRaw[] = [
     path: "/addmonograph",
     name: "AddMonograph",
     component: () => import("../views/AddMonograph.vue"),
+  },
+  {
+    path: "/addstudent",
+    name: "AddStudent",
+    component: () => import("../views/AddStudent.vue"),
   },
 ];
 

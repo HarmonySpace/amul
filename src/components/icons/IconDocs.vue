@@ -86,14 +86,6 @@ const handleMouseLeave = () => {
 </template>
 
 <style scoped>
-.icon-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.1s ease-in;
-  box-shadow: 0 0 2rem var(--acn);
-  height: 100%;
-}
 
 .cls-1 {
   fill: none;
@@ -102,16 +94,5 @@ const handleMouseLeave = () => {
   stroke-linejoin: round;
 }
 
-.icon {
-  cursor: pointer;
-  box-shadow: 0 0 2rem var(--sha);
-  transition: all 0.1s ease-in;
-}
 
-.icon-container:hover {
-  box-shadow: 0 0 2rem var(--acn);
-  transform: scale(1.1);
-  cursor: pointer;
-  transition: all 0.1s ease-in;
-}
 </style>

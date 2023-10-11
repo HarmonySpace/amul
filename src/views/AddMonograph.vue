@@ -9,7 +9,7 @@ interface InputTextData {
   nm: string,
   lb: string,
   lg: string,
-  ty: string;
+  ty: string,
 }
 interface InputText2Data {
   ph1: string,
@@ -44,8 +44,8 @@ const inputF1: InputFileData = { nm: "file_p", lb: "Seleccionar archivo", lg: "s
 
 
 <template>
-  <section class="con">
-    <div class="limited">
+  <main class="container init-page">
+    <section class="limited">
       <header class="header-con">
         <h1>Añadir</h1>
         <p>Agregar una nueva monografía en el sistema con los datos solicitados</p>
@@ -76,28 +76,12 @@ const inputF1: InputFileData = { nm: "file_p", lb: "Seleccionar archivo", lg: "s
           <InputFile :data="inputF1"></InputFile>
         </form>
       </main>
-    </div>
-  </section>
+    </section>
+  </main>
 </template>
 
 
 <style scoped>
-.con {
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  width: 100%;
-  margin: 30vh 0 20vh 0;
-}
-
-.limited {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: start;
-  align-items: start;
-  width: 70%;
-}
-
 .header-con {
   display: flex;
   flex-wrap: wrap;

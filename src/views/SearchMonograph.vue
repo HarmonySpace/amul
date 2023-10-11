@@ -5,7 +5,7 @@ import CommonButton2 from "../components/buttons/CommonButton2.vue";
 </script>
 
 <template>
-  <section class="con">
+  <section class="container init-page">
     <form class="con-form">
       <label class="con-form-title">
         <h1>AMUL</h1>
@@ -18,15 +18,6 @@ import CommonButton2 from "../components/buttons/CommonButton2.vue";
 </template>
 
 <style scoped>
-.con {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-}
-
 .con-form {
   display: flex;
   flex-wrap: wrap;

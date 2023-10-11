@@ -27,11 +27,11 @@ const props = defineProps({
 })
 </script>
 <template>
-  <div class="container">
-    <div class="box">
+  <div class="container fp-container">
+    <div class="container box">
       <IconPeople :bg="props.ibg1" :bg2="props.ibg2" :sha="props.sha" :sha2="props.sha2"></IconPeople>
     </div>
-    <div class="box">
+    <div class="container box">
       <InputText2 :data="props.text1" />
       <InputText :data="props.text2" />
     </div>
@@ -39,22 +39,19 @@ const props = defineProps({
 </template>
 
 <style scoped>
-.container {
-  display: flex;
+.fp-container, .box:nth-child(1), .box:nth-child(2) {
+  margin: 0;
+}
+.fp-container {
   justify-content: space-between;
   align-items: center;
-  width: 100%;
 }
-
-.container .box:nth-child(1) {
-  display: flex;
-  justify-content: center;
+.fp-container .box:nth-child(1) {
   align-items: center;
   width: 20%;
 }
 
-.container .box:nth-child(2) {
-  display: flex;
+.fp-container .box:nth-child(2) {
   justify-content: start;
   align-items: center;
   flex-wrap: wrap;

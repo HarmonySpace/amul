@@ -13,7 +13,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <section class="container">
+  <section class="it-container">
     <div class="box">
       <label :for="props.data.nm1">{{ props.data.lb1 }}</label>
       <input class="input" type="text" :id="props.data.nm1" :name="props.data.nm1" :placeholder="props.data.ph1">
@@ -26,7 +26,7 @@ const props = defineProps({
 </template>
 
 <style scoped>
-.container {
+.it-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,11 +34,11 @@ const props = defineProps({
   width: 100%;
 }
 
-.container .box:nth-child(1) {
+.it-container .box:nth-child(1) {
   margin-right: 0.5rem;
 }
 
-.container .box:nth-child(2) {
+.it-container .box:nth-child(2) {
   margin-left: 0.5rem;
 }
 

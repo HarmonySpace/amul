@@ -83,30 +83,10 @@ const handleMouseLeave = () => {
 </template>
 
 <style scoped>
-.icon-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.1s ease-in;
-  /* box-shadow: 0 0 2rem var(--sha2); */
-  height: 100%;
-}
-
 .cls-1 {
   fill: none;
   /* stroke: var(--fr); */
   stroke-linecap: round;
   stroke-linejoin: round;
-}
-
-.icon {
-  cursor: pointer;
-  transition: all 0.1s ease-in;
-}
-
-.icon-container:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-  transition: all 0.1s ease-in;
 }
 </style>
