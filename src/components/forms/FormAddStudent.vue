@@ -2,6 +2,7 @@
 import IconPeople from "../icons/IconPeople.vue"
 import InputText2 from "../inputs/InputText2.vue"
 import InputText from "../inputs/InputText.vue"
+import CommonButton from "../buttons/CommonButton.vue"
 interface InputTextData {
   ph: string,
   nm: string,
@@ -28,7 +29,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <form class="container fp-container">
+  <form class="container fas-container">
     <div class="container box">
       <IconPeople :bg="props.ibg1" :bg2="props.ibg2" :sha="props.sha" :sha2="props.sha2"></IconPeople>
     </div>
@@ -36,26 +37,33 @@ const props = defineProps({
       <InputText2 :data="props.text1" />
       <InputText :data="props.text2" />
     </div>
+    <div class="container box fas-button">
+      <CommonButton></CommonButton>
+    </div>
   </form>
 </template>
 
 <style scoped>
-.fp-container, .box:nth-child(1), .box:nth-child(2) {
+.fas-container, .box:nth-child(1), .box:nth-child(2) {
   margin: 0;
 }
-.fp-container {
+.fas-container {
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
-.fp-container .box:nth-child(1) {
+.fas-container .box:nth-child(1) {
   align-items: center;
   width: 20%;
 }
 
-.fp-container .box:nth-child(2) {
+.fas-container .box:nth-child(2) {
   justify-content: start;
   align-items: center;
   flex-wrap: wrap;
   width: 80%;
+}
+.fas-button {
+  justify-content: end;
 }
 </style>

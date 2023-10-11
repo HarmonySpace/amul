@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import FormPerson from "../components/forms/FormPerson.vue"
+import FormAddStudent from "../components/forms/FormAddStudent.vue"
 interface InputTextData {
   ph: string,
   nm: string,
@@ -27,7 +27,7 @@ const inputT2: InputText2Data = { ph1: "John", nm1: "nombre_s", lb1: "Nombres", 
         <p>Añadir un estudiante para tener registro en la base de datos</p>
       </header>
       <main class="container as-main">
-        <FormPerson :text1="inputT2" :text2="inputT1" />
+        <FormAddStudent :text1="inputT2" :text2="inputT1" />
       </main>
     </section>
   </main>
