@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, defineEmits } from "vue"
+import { ref } from "vue"
 interface Data {
   ph1: string,
   nm1: string,

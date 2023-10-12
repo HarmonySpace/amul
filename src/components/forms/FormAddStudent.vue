@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, defineEmits, watch } from "vue"
+import { ref, watch } from "vue"
 import IconPeople from "../icons/IconPeople.vue"
 import InputText2 from "../inputs/InputText2.vue"
 import InputText from "../inputs/InputText.vue"
