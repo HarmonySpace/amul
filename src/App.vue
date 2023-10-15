@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import MenuSidebar from "./components/menu/MenuSidebar.vue"
 </script>
 
 <template>
   <section class="body">
-    <MenuSidebar />
-    <router-view></router-view>
+    <h1>HelloWorld</h1>
   </section>
 </template>
 
