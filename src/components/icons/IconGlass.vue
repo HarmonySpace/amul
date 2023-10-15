@@ -74,20 +74,10 @@ const handleMouseLeave = () => {
   <div class="icon-container" :style="[iconC, hoverShadown]" @mouseover="handleMouseHover" @mouseleave="handleMouseLeave">
     <svg id="icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" :style="icon">
       <g id="glass">
-        <circle class="cls-1" cx="43.62" cy="43.62" r="24.1" />
-        <line class="cls-1" x1="60.66" y1="60.66" x2="80.49" y2="80.49" />
-        <path class="cls-1" d="M43.62,30a13.59,13.59,0,0,1,13.6,13.61" />
+        <circle class="icon-normalize" cx="43.62" cy="43.62" r="24.1" />
+        <line class="icon-normalize" x1="60.66" y1="60.66" x2="80.49" y2="80.49" />
+        <path class="icon-normalize" d="M43.62,30a13.59,13.59,0,0,1,13.6,13.61" />
       </g>
     </svg>
   </div>
 </template>
-
-<style scoped>
-
-.cls-1 {
-  fill: none;
-  /* stroke: var(--fr); */
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-</style>

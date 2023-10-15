@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref } from "vue"
-import { Student } from "../interfaces/Student"
-import FormAddStudent from "../components/forms/FormAddStudent.vue"
-import { addStudent } from "../api/StudentApi"
-import CommonButton from "../components/buttons/CommonButton.vue"
+import { Student } from "../../interfaces/Student"
+import { addStudent } from "../../api/StudentApi"
+import FormAddStudent from "../../components/forms/FormAddStudent.vue"
+import CommonButton from "../../components/buttons/CommonButton.vue"
 interface InputTextData {
   ph: string,
   nm: string,
@@ -36,8 +36,7 @@ const saveStudent = async () => {
   //console.log(component.value)
   if (!student.value.names && !student.value.lastnames && !student.value.cardId) {
     console.log('please fill all camps to continue')
-  }
-  else if (!student.value.names) {
+  } else if (!student.value.names) {
     console.log('no names')
   } else if (!student.value.lastnames) {
     console.log('no lastnames')

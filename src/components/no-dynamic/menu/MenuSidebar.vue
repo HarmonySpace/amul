@@ -1,12 +1,31 @@
 <script setup lang="ts">
-import { ref } from "vue"
+import { ref, watch } from "vue"
 import { useRouter } from "vue-router"
-import IconMenu from "../icons/IconMenu.vue"
+import IconMenu from "../../icons/IconMenu.vue"
 
-let menuState = ref(false)
+const props = defineProps({
+  state: { type: Boolean, default: true },
+})
+
+const emit = defineEmits(["stateu"])
+
+watch(() => props.state, (change) => {
+  updateFatherState(change)
+})
+
+let menuState = ref(props.state)
 const router = useRouter()
+
+const updateFatherState = (newState: boolean) => {
+  menuState.value = newState;
+}
+const closeMenu = () => {
+  menuState.value = false
+  emit("stateu", menuState.value)
+}
 const toggleMenu = () => {
-  menuState.value = !menuState.value;
+  menuState.value = !menuState.value
+  emit("stateu", menuState.value)
 }
 const navegateTo = (to: string) => {
   router.push(to)
@@ -14,8 +33,8 @@ const navegateTo = (to: string) => {
 </script>
 
 <template>
-  <div class="cont-menu">
-    <IconMenu class="icon" :class="{ 'icon-rotate': menuState }" @click="toggleMenu()" sz="1.5rem" />
+  <div @click="closeMenu()" class="cont-menu">
+    <IconMenu class="icon" :class="{ 'icon-rotate': menuState }" @click.stop="toggleMenu()" sz="1.5rem" />
     <Transition name="list">
       <ul class="menu-list" v-show="menuState">
         <li class="menu-item" @click="navegateTo('/')">
@@ -24,12 +43,14 @@ const navegateTo = (to: string) => {
         <li class="menu-item" @click="navegateTo('/addmonograph')">
           <router-link class="menu-link" ref="añadir" to="/addmonograph">Añadir</router-link>
         </li>
-        <li class="menu-item" @click="navegateTo('/addstudent')">
-          <router-link class="menu-link" ref="añadir estudiante" to="/addstudent">Añadir estudiantes</router-link>
+        <li class="menu-item" @click="navegateTo('/student/add')">
+          <router-link class="menu-link" ref="añadir estudiante" to="/student/add">Añadir estudiantes</router-link>
+        </li>
+        <li class="menu-item" @click="navegateTo('/student/list')">
+          <router-link class="menu-link" ref="añadir estudiante" to="/student/list">Listar estudiantes</router-link>
         </li>
       </ul>
     </Transition>
-
   </div>
 </template>
 

@@ -74,25 +74,13 @@ const handleMouseLeave = () => {
   <div class="icon-container" :style="[iconC, hoverShadown]" @mouseover="handleMouseHover" @mouseleave="handleMouseLeave">
     <svg id="icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" :style="icon">
       <g id="docs">
-        <rect class="cls-1" x="28.03" y="19.51" width="43.95" height="60.97" rx="6.32" />
-        <line class="cls-1" x1="38.91" y1="32.18" x2="61.09" y2="32.18" />
-        <line class="cls-1" x1="38.91" y1="44.06" x2="61.09" y2="44.06" />
-        <line class="cls-1" x1="38.91" y1="55.94" x2="61.09" y2="55.94" />
-        <line class="cls-1" x1="38.91" y1="67.82" x2="61.09" y2="67.82" />
+        <rect class="icon-normalize" x="28.03" y="19.51" width="43.95" height="60.97" rx="6.32" />
+        <line class="icon-normalize" x1="38.91" y1="32.18" x2="61.09" y2="32.18" />
+        <line class="icon-normalize" x1="38.91" y1="44.06" x2="61.09" y2="44.06" />
+        <line class="icon-normalize" x1="38.91" y1="55.94" x2="61.09" y2="55.94" />
+        <line class="icon-normalize" x1="38.91" y1="67.82" x2="61.09" y2="67.82" />
       </g>
     </svg>
 
   </div>
 </template>
-
-<style scoped>
-
-.cls-1 {
-  fill: none;
-  /* stroke: var(--fr); */
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-
-</style>

@@ -1,11 +1,22 @@
 <script setup lang="ts">
-import MenuSidebar from "./components/menu/MenuSidebar.vue"
+import { ref } from "vue"
+import MenuSidebar from "./components/no-dynamic/menu/MenuSidebar.vue"
+
+const state = ref(false)
+
+const closeMenu = () => {
+  state.value = false
+}
+
+const updateState = ( stateu: boolean ) => {
+  state.value = stateu
+}
 </script>
 
 <template>
-  <section class="body">
-    <MenuSidebar />
-    <router-view></router-view>
+  <section class="body">  
+    <MenuSidebar :state="state" @stateu="updateState" />
+    <router-view @click="closeMenu()"></router-view>
   </section>
 </template>
 

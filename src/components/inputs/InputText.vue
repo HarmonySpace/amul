@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { ref } from "vue"
 interface Data {
-  ph: string;
+  ph: string,
   nm: string,
   lb: string,
-  lg: string;
-  ty: string;
+  lg: string,
+  ty: string,
 }
 const props = defineProps({
   data: { type: Object as () => Data, default: () => ({ ph: "", nm: "", lb: "", lg: "full", ty: "text" }) },
@@ -24,7 +24,7 @@ else {
 const content = ref<string>("")
 const handleInput = () => {
   emit("input1", content.value)
-}
+} 
 </script>
 
 <template>

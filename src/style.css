@@ -82,7 +82,7 @@ label {
   width: 70%;
 }
 .init-page {
-  margin: 30vh 0 20vh 0;
+  padding: 30vh 0 20vh 0;
 }
 .icon-container {
   display: flex;
@@ -103,4 +103,19 @@ label {
   box-shadow: 0 0 2rem var(--sha);
   transition: all 0.3s ease-in;
 }
+.icon-normalize {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon-logo {
+  box-shadow: none;
+}
+.icon-logo:hover {
+  box-shadow: none;
+}
+
+
+
 

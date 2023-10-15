@@ -13,10 +13,15 @@ const routes: RouteRecordRaw[] = [
     component: () => import("../views/AddMonograph.vue"),
   },
   {
-    path: "/addstudent",
+    path: "/student/add",
     name: "AddStudent",
-    component: () => import("../views/AddStudent.vue"),
+    component: () => import("../views/students/AddStudent.vue"),
   },
+  {
+    path: "/student/list",
+    name: "ListStudents",
+    component: () => import("../views/students/ListStudents.vue")
+  }
 ];
 
 const router = createRouter({
