@@ -1,36 +1,48 @@
 <script setup lang="ts">
 import { ref } from "vue"
-interface Data {
-  ph: string,
-  nm: string,
-  lb: string,
-  lg: string,
-  ty: string,
-}
 const props = defineProps({
-  data: { type: Object as () => Data, default: () => ({ ph: "", nm: "", lb: "", lg: "full", ty: "text" }) },
+  ph: {
+    type: String,
+    default: ""
+  },
+  nm: {
+    type: String,
+    default: ""
+  },
+  lb: {
+    type: String,
+    default: ""
+  },
+  lg: {
+    type: String,
+    default: "full"
+  },
+  ty: {
+    type: String,
+    default: "text"
+  }
 })
 const emit = defineEmits(["input1"])
+const content = ref<string>("")
 
 let large = "";
-if (props.data.lg == "small") {
+if (props.lg == "small") {
   large = "width: " + "30%" + ";";
-} else if (props.data.lg == "medium") {
+} else if (props.lg == "medium") {
   large = "width: " + "50%" + ";";
 }
 else {
   large = "width: " + "100%" + ";";
 }
-const content = ref<string>("")
 const handleInput = () => {
   emit("input1", content.value)
 } 
 </script>
 
 <template>
-  <label class="label" :for="props.data.nm">{{ props.data.lb }}</label>
-  <input @input="handleInput()" v-model.trim="content" :style="large" class="input" :type="props.data.ty" :id="props.data.nm" :name="props.data.nm"
-    :placeholder="props.data.ph"/>
+  <label class="label" :for="props.nm">{{ props.lb }}</label>
+  <input @input="handleInput()" v-model.trim="content" :style="large" class="input" :type="props.ty" :id="props.nm" :name="props.nm"
+    :placeholder="props.ph"/>
 </template>
 
 <style scoped>

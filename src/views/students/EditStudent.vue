@@ -6,24 +6,6 @@ import { getStudent } from "../../api/StudentApi"
 import FormAddStudent from "../../components/forms/FormAddStudent.vue"
 import CommonButton from "../../components/buttons/CommonButton.vue"
 import IconArrow from "../../components/icons/IconArrow.vue"
-interface InputTextData {
-  ph: string,
-  nm: string,
-  lb: string,
-  lg: string,
-  ty: string,
-}
-interface InputText2Data {
-  ph1: string,
-  nm1: string,
-  lb1: string,
-  ph2: string,
-  nm2: string,
-  lb2: string,
-}
-
-const inputT1: InputTextData = { ph: "00-00000-0", nm: "carnet_s", lb: "Carnet", lg: "small", ty: "text" }
-const inputT2: InputText2Data = { ph1: "John", nm1: "nombre_s", lb1: "Nombres", ph2: "Doe", nm2: "apellido_s", lb2: "Apellidos" }
 
 const student = ref({} as Student)
 const router = useRouter();
@@ -79,8 +61,7 @@ const saveStudent = async () => {
         <p>Añadir un estudiante para tener registro en la base de datos</p>
       </header>
       <main class="container as-main">
-        <FormAddStudent @finput1="textChange1" @finput2="textChange2" @finput3="textChange3" :text1="inputT2"
-          :text2="inputT1" />
+        <FormAddStudent @finput1="textChange1" @finput2="textChange2" @finput3="textChange3" ph="00-00000-0" nm="carnet_s" lb="Carnet" lg="small" ph1="John" nm1="nombre_s" lb1=" Nombres" ph2="Doe" nm2="apellidos_s" lb2=" Apellidos" />
         <div class="container as-main-button">
           <CommonButton msg="Añadir" @click="saveStudent()"></CommonButton>
         </div>
