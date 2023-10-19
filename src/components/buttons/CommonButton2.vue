@@ -60,6 +60,6 @@ const text = fz
 .cb-text {
   transition: all 0.1s;
   font-weight: 500;
-  color: var(--fr)
+  color: var(--bg)
 }
 </style>

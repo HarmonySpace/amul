@@ -64,7 +64,7 @@ const saveStudent = async () => {
       <IconArrow class="back-arrow" cl="var(--fr)" bg="var(--void)" bg2="var(--void)" sha="var(--void)" sha2="var(--void)"
       @click="navegateTo('/student/view')"></IconArrow>
       <header class="container as-header">
-        <h1>Añadir estudiante</h1>
+        <h1>Editar estudiante número {{ $route.params.id }}</h1>
         <p>Añadir un estudiante para tener registro en la base de datos</p>
       </header>
       <main class="container as-main">

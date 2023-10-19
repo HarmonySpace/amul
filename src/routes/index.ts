@@ -1,6 +1,8 @@
-import { RouteRecordRaw, createRouter, createWebHistory } from "vue-router";
+import { RouteRecordRaw, createRouter, createWebHistory } from "vue-router"
+import studentRoutes from "./students";
 
 const routes: RouteRecordRaw[] = [
+  ...studentRoutes,
   {
     alias: "/searchmonograph",
     path: "/",
@@ -12,16 +14,6 @@ const routes: RouteRecordRaw[] = [
     name: "AddMonograph",
     component: () => import("../views/AddMonograph.vue"),
   },
-  {
-    path: "/student/add",
-    name: "AddStudent",
-    component: () => import("../views/students/AddStudent.vue"),
-  },
-  {
-    path: "/student/list",
-    name: "ListStudents",
-    component: () => import("../views/students/ListStudents.vue")
-  }
 ];
 
 const router = createRouter({

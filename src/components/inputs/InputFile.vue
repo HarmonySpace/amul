@@ -24,7 +24,7 @@ else {
 
 <template>
   <label class="label" :style="large" :for="props.data.nm">{{ props.data.lb }}
-    <IconDocs class="if-icon" bg="var(--bg)" bg2="var(--bg)" sha="var(--bg)" sha2="var(--bg)"></IconDocs>
+    <IconDocs class="if-icon" bg="var(--bg)" bg2="var(--bg)" sha="var(--bg)" sha2="var(--bg)" cl="var(--fr)" st="5px"></IconDocs>
     <input class="input" type="file" :id="props.data.nm" :name="props.data.nm" :accept="props.data.fl">
   </label>
 </template>
