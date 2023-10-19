@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { ref } from "vue"
+import { ref, onMounted } from "vue"
 import { useRouter } from "vue-router"
 import { Student } from "../../interfaces/Student"
-import { addStudent } from "../../api/StudentApi"
+import { getStudent } from "../../api/StudentApi"
 import FormAddStudent from "../../components/forms/FormAddStudent.vue"
 import CommonButton from "../../components/buttons/CommonButton.vue"
 import IconArrow from "../../components/icons/IconArrow.vue"
@@ -22,16 +22,27 @@ interface InputText2Data {
   lb2: string,
 }
 
+const inputT1: InputTextData = { ph: "00-00000-0", nm: "carnet_s", lb: "Carnet", lg: "small", ty: "text" }
+const inputT2: InputText2Data = { ph1: "John", nm1: "nombre_s", lb1: "Nombres", ph2: "Doe", nm2: "apellido_s", lb2: "Apellidos" }
+
+const student = ref({} as Student)
 const router = useRouter();
 
 const navegateTo = (to: string) => {
   router.push(to)
 }
 
-const inputT1: InputTextData = { ph: "00-00000-0", nm: "carnet_s", lb: "Carnet", lg: "small", ty: "text" }
-const inputT2: InputText2Data = { ph1: "John", nm1: "nombre_s", lb1: "Nombres", ph2: "Doe", nm2: "apellido_s", lb2: "Apellidos" }
+onMounted(() => {
+  if (typeof router.currentRoute.value.params.id === `string`){
+    loadStudent(router.currentRoute.value.params.id)
+  }
+})
 
-const student = ref({} as Student)
+const loadStudent = async (id: string) => {
+  const res = await getStudent(id)
+  student.value = res.data
+}
+
 const textChange1 = (input: string) => {
   student.value.names = input
 }
@@ -52,8 +63,8 @@ const saveStudent = async () => {
   } else if (!student.value.cardId) {
     console.log('no card id')
   } else {
-    const res = await addStudent(student.value)
-    console.log(res)
+    // const res = await addStudent(student.value)
+    // console.log(res)
   }
 }
 </script>

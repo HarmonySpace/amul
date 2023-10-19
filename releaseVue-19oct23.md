@@ -1,22 +1,5 @@
 - # Notas de la release
-	- Cambios importante en los estilos globales y específicos
-- # Estilos
-	- Se paso al modo claro en la configuración de los estilos globales del archivo `src/style.css`
-	- Se cambió de modo oscuro a modo claro en los estilos globales
-	- Etilos globales para la flecha "back-arrow"
-	- Se añadió un nuevo layout para las páginas con el icono de "back-arrow"
-	- Se añadieron las propiedades de "cl" y "st" en el icono del componente `src/components/inputs/InputFile.vue`
-- # Componentes
-	- ## Bottones
-		- Cambio en la apariencia y la animación `:hover` en el componente `src/components/buttons/CommonButton.vue`
-		- Se cambio de color "fr" a "bg" al color del texto en el componente `src/components/buttons/CommonButton2.vue`
-		- Se añaden los iconos de arrow, edit y trash
-	- ## Menú
-		- Se remueven las vistas individuales relacionadas con las interacciones con los datos estudiantes y se intercambio por una vista individual en `src/views/students/StudentView.vue`
-- # Views
-	- Cambios visuales y funcionales a la vista de `src/views/students/AddStudent.vue`
-	- Se creo la vista `src/views/students/EditStudent.vue` para editar los datos de estudiantes ya hechos
-	- Se eliminó la vista `ListStudents.vue`
-- # Rutas
-	- Se separaron las rutas por modelo y manipulación de datos.
-	- Se creo una ruta para los datos de `Students` en el archivo `src/routes/students.ts` y se configuro en el archivo `src/routes/index.ts`
+	- Avances en la solicitud individual de los estudiantes
+- # Api
+	- Se añadió la petición de `getStudent()` en `src/api/StudentApi.ts`
+	- Avances en el componente de `src/views/students/EditStudent.vue` para la petición del estudiante seleccionado
