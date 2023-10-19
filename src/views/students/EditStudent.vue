@@ -15,7 +15,7 @@ const navegateTo = (to: string) => {
 }
 
 onMounted(() => {
-  if (typeof router.currentRoute.value.params.id === `string`){
+  if (typeof router.currentRoute.value.params.id === `string`) {
     loadStudent(router.currentRoute.value.params.id)
   }
 })
@@ -35,19 +35,19 @@ const textChange3 = (input: string) => {
   student.value.cardId = input
 }
 const saveStudent = async () => {
-  //console.log(component.value)
-  if (!student.value.names && !student.value.lastnames && !student.value.cardId) {
-    console.log('please fill all camps to continue')
-  } else if (!student.value.names) {
-    console.log('no names')
-  } else if (!student.value.lastnames) {
-    console.log('no lastnames')
-  } else if (!student.value.cardId) {
-    console.log('no card id')
-  } else {
-    // const res = await addStudent(student.value)
-    // console.log(res)
-  }
+  // console.log(component.value)
+  // if (!student.value.names && !student.value.lastnames && !student.value.cardId) {
+  //   console.log('please fill all camps to continue')
+  // } else if (!student.value.names) {
+  //   console.log('no names')
+  // } else if (!student.value.lastnames) {
+  //   console.log('no lastnames')
+  // } else if (!student.value.cardId) {
+  //   console.log('no card id')
+  // } else {
+  //   const res = await addStudent(student.value)
+  //   console.log(res)
+  //}
 }
 </script>
 
@@ -55,13 +55,15 @@ const saveStudent = async () => {
   <main class="container init-page-back">
     <section class="limited">
       <IconArrow class="back-arrow" cl="var(--fr)" bg="var(--void)" bg2="var(--void)" sha="var(--void)" sha2="var(--void)"
-      @click="navegateTo('/student/view')"></IconArrow>
+        @click="navegateTo('/student/view')"></IconArrow>
       <header class="container as-header">
         <h1>Editar estudiante número {{ $route.params.id }}</h1>
         <p>Añadir un estudiante para tener registro en la base de datos</p>
       </header>
       <main class="container as-main">
-        <FormAddStudent @finput1="textChange1" @finput2="textChange2" @finput3="textChange3" ph="00-00000-0" nm="carnet_s" lb="Carnet" lg="small" ph1="John" nm1="nombre_s" lb1=" Nombres" ph2="Doe" nm2="apellidos_s" lb2=" Apellidos" />
+        <FormAddStudent @finput1="textChange1" @finput2="textChange2" @finput3="textChange3" ph="00-00000-0" nm="carnet_s"
+          :ct="student.cardId" lb="Carnet" lg="small" ph1="John" nm1="nombre_s" :ct1="student.names" lb1=" Nombres"
+          ph2="Doe" nm2="apellidos_s" :ct2="student.lastnames" lb2=" Apellidos" />
         <div class="container as-main-button">
           <CommonButton msg="Añadir" @click="saveStudent()"></CommonButton>
         </div>
@@ -92,4 +94,5 @@ const saveStudent = async () => {
 
 .as-main-button {
   justify-content: end;
-}</style>
+}
+</style>

@@ -3,9 +3,13 @@ import { ref } from "vue"
 const props = defineProps({
   ph: {
     type: String,
-    default: ""
+    default: "code"
   },
   nm: {
+    type: String,
+    default: ""
+  },
+  ct: {
     type: String,
     default: ""
   },
@@ -24,6 +28,7 @@ const props = defineProps({
 })
 const emit = defineEmits(["input1"])
 const content = ref<string>("")
+content.value = props.ct
 
 let large = "";
 if (props.lg == "small") {
@@ -34,6 +39,7 @@ if (props.lg == "small") {
 else {
   large = "width: " + "100%" + ";";
 }
+
 const handleInput = () => {
   emit("input1", content.value)
 } 

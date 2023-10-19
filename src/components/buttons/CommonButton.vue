@@ -27,6 +27,7 @@ const props = defineProps({
 
 .cb-cont:hover {
   transform: scale(1.2);
+  cursor: pointer;
   border: 0.1rem solid var(--void);
   background-color: var(--acn);
 }
@@ -38,18 +39,4 @@ const props = defineProps({
 .cb-text {
   font-weight: 700;
 }
-
-/* .cb-cont:hover .cb-text {
-  cursor: pointer;
-  transform: scale(1.1);
-}
-
-.cb-cont:hover {
-  box-shadow: 0 0 1rem var(--sha2);
-}
-
-.cb-text {
-  transition: all 0.1s;
-  font-weight: 500;
-} */
 </style>

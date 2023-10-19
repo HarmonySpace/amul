@@ -1,5 +1,0 @@
-- # Notas de la release
-	- Avances en la solicitud individual de los estudiantes
-- # Api
-	- Se añadió la petición de `getStudent()` en `src/api/StudentApi.ts`
-	- Avances en el componente de `src/views/students/EditStudent.vue` para la petición del estudiante seleccionado

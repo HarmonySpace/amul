@@ -1,0 +1,13 @@
+- # Notas de la release
+	- Avances en la solicitud individual de los estudiantes
+	- Eliminación de las interfaces en los componentes
+	- Remoción de algunos estilos en los botones
+- # Api
+	- Se añadió la petición de `getStudent()` en `src/api/StudentApi.ts`
+	- Avances en el componente de `src/views/students/EditStudent.vue` para la petición del estudiante seleccionado
+- # Interfaces
+	- Se removieron las interfaces de los componentes para una mejor comprensión de los `props` y `emits` de dicho componente.
+- # Componentes
+	- Se eliminaron los estilos del componente `src/components/buttons/CommonButton.vue`
+- # Porps
+	- Se remplazaron las interfaces por los props, además de incluir el campo `ct` en los componentes que incluyen las importaciones de `InputText.vue` y `InputText2.vue`

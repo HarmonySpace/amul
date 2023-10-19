@@ -17,6 +17,14 @@ const props = defineProps({
     type: String,
     default: ""
   },
+  ct1: {
+    type: String,
+    default: ""
+  },
+  ct2: {
+    type: String,
+    default: ""
+  },
   lb1: {
     type: String,
     default: ""
@@ -30,7 +38,11 @@ const emit = defineEmits(["input1", "input2"])
 
 let content1 = ref<string>("")
 let content2 = ref<string>("")
-  const handleInpu1 = () => {
+
+content1.value = props.ct1
+content2.value = props.ct2
+
+const handleInpu1 = () => {
   emit("input1", content1.value)
 }
 const handleInput2 = () => {
@@ -42,11 +54,13 @@ const handleInput2 = () => {
   <section class="it2-container">
     <div class="box">
       <label :for="props.nm1">{{ props.lb1 }}</label>
-      <input @input="handleInpu1" v-model.trim="content1" class="input" type="text" :id="props.nm1" :name="props.nm1" :placeholder="props.ph1">
+      <input @input="handleInpu1" v-model.trim="content1" class="input" type="text" :id="props.nm1" :name="props.nm1"
+        :placeholder="props.ph1">
     </div>
     <div class="box">
       <label :for="props.nm2">{{ props.lb2 }}</label>
-      <input @input="handleInput2" v-model.trim="content2" class="input" type="text" :id="props.nm2" :name="props.nm2" :placeholder="props.ph2">
+      <input @input="handleInput2" v-model.trim="content2" class="input" type="text" :id="props.nm2" :name="props.nm2"
+        :placeholder="props.ph2">
     </div>
   </section>
 </template>
