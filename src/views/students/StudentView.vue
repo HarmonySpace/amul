@@ -42,16 +42,8 @@ const loadStudents = async () => {
             </main>
           </li>
           <h1>Mio</h1>
-          <li v-for="student in students" class="container">
-            <IconPeople @click="navegateTo('student/edit/{{ student.card }}')"></IconPeople>
-            <main class="container student-data">
-              <h1>{{ student.names + student.lastnames }}</h1>
-              <p>{{ student.cardId }}</p>
-            </main>
-          </li>
-          <h1>Del Anterior</h1>
-          <li v-for="student in students" class="container">
-            <IconPeople @click="router.push('/task/${task._id}')"></IconPeople>
+          <li v-for="student in students" :key="student._id" class="container">
+            <IconPeople @click="navegateTo('/student/edit/' + student._id)"></IconPeople>
             <main class="container student-data">
               <h1>{{ student.names + student.lastnames }}</h1>
               <p>{{ student.cardId }}</p>

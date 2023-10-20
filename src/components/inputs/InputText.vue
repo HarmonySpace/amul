@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue"
+import { ref, watch } from "vue"
 const props = defineProps({
   ph: {
     type: String,
@@ -26,7 +26,9 @@ const props = defineProps({
     default: "text"
   }
 })
+
 const emit = defineEmits(["input1"])
+
 const content = ref<string>("")
 content.value = props.ct
 
@@ -39,6 +41,10 @@ if (props.lg == "small") {
 else {
   large = "width: " + "100%" + ";";
 }
+
+watch(() => props.ct, (newValue) => {
+  content.value = newValue
+})
 
 const handleInput = () => {
   emit("input1", content.value)

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue"
+import { ref, watch } from "vue"
 const props = defineProps({
   ph1: {
     type: String,
@@ -34,15 +34,22 @@ const props = defineProps({
     default: ""
   }
 })
+
 const emit = defineEmits(["input1", "input2"])
 
-let content1 = ref<string>("")
-let content2 = ref<string>("")
-
+const content1 = ref<string>("")
+const content2 = ref<string>("")
 content1.value = props.ct1
 content2.value = props.ct2
 
-const handleInpu1 = () => {
+watch(() => props.ct1, (newValue) => {
+  content1.value = newValue
+})
+watch(() => props.ct2, (newValue) => {
+  content2.value = newValue
+})
+
+const handleInput1 = () => {
   emit("input1", content1.value)
 }
 const handleInput2 = () => {
@@ -54,12 +61,12 @@ const handleInput2 = () => {
   <section class="it2-container">
     <div class="box">
       <label :for="props.nm1">{{ props.lb1 }}</label>
-      <input @input="handleInpu1" v-model.trim="content1" class="input" type="text" :id="props.nm1" :name="props.nm1"
+      <input @input="handleInput1()" v-model.trim="content1" class="input" type="text" :id="props.nm1" :name="props.nm1"
         :placeholder="props.ph1">
     </div>
     <div class="box">
       <label :for="props.nm2">{{ props.lb2 }}</label>
-      <input @input="handleInput2" v-model.trim="content2" class="input" type="text" :id="props.nm2" :name="props.nm2"
+      <input @input="handleInput2()" v-model.trim="content2" class="input" type="text" :id="props.nm2" :name="props.nm2"
         :placeholder="props.ph2">
     </div>
   </section>

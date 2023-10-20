@@ -103,8 +103,6 @@ watch(() => text3.value, (change) => {
 </script>
 
 <template>
-  <h2>
-  </h2>
   <form class="container fas-container">
     <div class="container box">
       <IconPeople :bg="props.ibg1" :bg2="props.ibg2" :sha="props.sha" :sha2="props.sha2"></IconPeople>

@@ -57,13 +57,13 @@ const saveStudent = async () => {
       <IconArrow class="back-arrow" cl="var(--fr)" bg="var(--void)" bg2="var(--void)" sha="var(--void)" sha2="var(--void)"
         @click="navegateTo('/student/view')"></IconArrow>
       <header class="container as-header">
-        <h1>Editar estudiante número {{ $route.params.id }}</h1>
-        <p>Añadir un estudiante para tener registro en la base de datos</p>
+        <h1>Editar estudiante</h1>
+        <p>Editar el estudiante => {{ $route.params.id }}</p>
       </header>
       <main class="container as-main">
         <FormAddStudent @finput1="textChange1" @finput2="textChange2" @finput3="textChange3" ph="00-00000-0" nm="carnet_s"
-          :ct="student.cardId" lb="Carnet" lg="small" ph1="John" nm1="nombre_s" :ct1="student.names" lb1=" Nombres"
-          ph2="Doe" nm2="apellidos_s" :ct2="student.lastnames" lb2=" Apellidos" />
+          :ct="student.cardId" lb="Carnet" lg="small" ph1="John" nm1="nombre_s" lb1=" Nombres" :ct1="student.names"
+          ph2="Doe" nm2="apellidos_s" lb2=" Apellidos" :ct2="student.lastnames" />
         <div class="container as-main-button">
           <CommonButton msg="Añadir" @click="saveStudent()"></CommonButton>
         </div>
