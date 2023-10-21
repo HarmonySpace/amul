@@ -50,6 +50,7 @@ const handlePut = async () => {
   } else {
     const res = await putStudent(student.value._id ,student.value)
     console.log(res)
+    navegateTo('/student/view')
   }
 }
 

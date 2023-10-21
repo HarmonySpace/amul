@@ -1,16 +1,1 @@
-- # Notas de la release
-	- Nuevas funsiones del la api
-	- Cambios en algunos componentes
-	- Continuación de la remoción de las interfaces
-- # Api
-	- Se añadieron las fusiones axios de `putStudent` y `deleteStudent`
-	- Implementación de los metodos `put` y `delete` en el componente `src/views/students/EditStudent.vue`
-- # Componentes
-	- ## Botonoes
-		- Se cambiaron los estilos del componente `src/components/buttons/CommonButton.vue`
-	- ## Formularios
-		- Se sustituyó el componente `src/components/forms/FormAddStudent.vue` por el `src/components/forms/FormPerson.vue`
-	- ## Otros
-		- Cambios mínimos a otros componentes
-- # Interfaces
-	- Remoción de las interfaces en los componentes `src/views/AddMonograph.vue` y `src/views/students/AddStudent.vue`
+loading ...

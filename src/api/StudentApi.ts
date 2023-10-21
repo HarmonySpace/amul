@@ -10,4 +10,4 @@ export const addStudent = async (student: Student): Promise<AxiosResponse<Studen
 // puts
 export const putStudent = async (id: string, student: Student): Promise<AxiosResponse<Student>> => await axios.put("/students/id/" + id, student)
 // delete
-export const deleteStudent = async (id: string): Promise<AxiosResponse<Student>> => await axios.delete("/student/id/" + id)
+export const deleteStudent = async (id: string): Promise<AxiosResponse<Student>> => await axios.delete("/students/id/" + id)
