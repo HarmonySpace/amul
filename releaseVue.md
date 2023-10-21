@@ -1,13 +1,16 @@
 - # Notas de la release
-	- Cambios en las peticiones `axios` hacia el servidor
-	- Eliminación de algunos elementos de testing
-	- Implementación de `watch` y `props` en el funsionamiento de los componentes de `inputs`
+	- Nuevas funsiones del la api
+	- Cambios en algunos componentes
+	- Continuación de la remoción de las interfaces
 - # Api
-	- Se arregló la ruta de las peticiones en la solicitud **axios** de la funsión `getStudent`
-- # Testing
-	- Se eliminaron varios `<h2>` de muchas vistas para el testing
+	- Se añadieron las fusiones axios de `putStudent` y `deleteStudent`
+	- Implementación de los metodos `put` y `delete` en el componente `src/views/students/EditStudent.vue`
 - # Componentes
-	- Se asignaron las funsiones `watch()` para las variables relacionadas al contenido de los `inputs` en los componentes de `src/components/inputs/InputText.vue` y `src/components/inputs/InputText2.vue`
-- # Vistas
-	- Se asignaron los props pertenecientes a los datos del estudiante seleccionado.
--
+	- ## Botonoes
+		- Se cambiaron los estilos del componente `src/components/buttons/CommonButton.vue`
+	- ## Formularios
+		- Se sustituyó el componente `src/components/forms/FormAddStudent.vue` por el `src/components/forms/FormPerson.vue`
+	- ## Otros
+		- Cambios mínimos a otros componentes
+- # Interfaces
+	- Remoción de las interfaces en los componentes `src/views/AddMonograph.vue` y `src/views/students/AddStudent.vue`
