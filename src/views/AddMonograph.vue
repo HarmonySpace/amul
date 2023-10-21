@@ -4,42 +4,6 @@ import InputText2 from "../components/inputs/InputText2.vue"
 import InputSwitch from "../components/inputs/InputSwitch.vue"
 import InputFile from "../components/inputs/InputFile.vue"
 import FormPerson from "../components/forms/FormPerson.vue"
-interface InputTextData {
-  ph: string,
-  nm: string,
-  lb: string,
-  lg: string,
-  ty: string,
-}
-interface InputText2Data {
-  ph1: string,
-  nm1: string,
-  lb1: string,
-  ph2: string,
-  nm2: string,
-  lb2: string,
-}
-interface SwitchData {
-  op1: string,
-  op2: string,
-}
-interface InputFileData {
-  nm: string,
-  lb: string,
-  lg: string,
-  fl: string,
-}
-const inputT1: InputTextData = { ph: "Ingrese el título", nm: "titulo_g", lb: "Título", lg: "full", ty: "text" }
-const inputT1_2: InputTextData = { ph: "00-00000-0", nm: "carnet_s", lb: "Carnet", lg: "small", ty: "text" }
-const inputT1_3: InputTextData = { ph: "example@gmail.com", nm: "correo_t", lb: "Correo Institucional", lg: "medium", ty: "email" }
-const inputT1_4: InputTextData = { ph: "DD/MMM/AAAA", nm: "fecha_p", lb: "Fecha de entrega", lg: "medium", ty: "date" }
-const inputS1: SwitchData = { op1: "Inactivo", op2: "Activo" }
-const inputS1_2: SwitchData = { op1: "No inscrito", op2: "Inscrito" }
-const inputT2: InputText2Data = { ph1: "John", nm1: "nombre_s", lb1: "Nombres", ph2: "Doe", nm2: "apellido_s", lb2: "Apellidos" }
-const inputT2_2: InputText2Data = { ph1: "Ciencias y Tecnologías", nm1: "facultad_u", lb1: "Facultad", ph2: "Computación", nm2: "departamento_u", lb2: "Departamento" }
-const inputT2_3: InputText2Data = { ph1: "John", nm1: "nombre_t", lb1: "Nombres", ph2: "Doe", nm2: "apellido_t", lb2: "Apellidos" }
-const inputF1: InputFileData = { nm: "file_p", lb: "Seleccionar archivo", lg: "small", fl: ".pdf" }
-
 </script>
 
 
@@ -50,30 +14,25 @@ const inputF1: InputFileData = { nm: "file_p", lb: "Seleccionar archivo", lg: "s
         <h1>Añadir</h1>
         <p>Agregar una nueva monografía en el sistema con los datos solicitados</p>
       </header>
-      <!-- group data -->
       <main class="main-con">
         <form class="main-form" action="">
-          <!-- group data -->
           <h2>Grupo</h2>
-          <InputText :data="inputT1" />
+          <InputText ph="Nombre del grupo" />
           <label>Estado</label>
-          <InputSwitch :data="inputS1" />
-          <!-- students data -->
+          <InputSwitch/>
           <h2>Estudiantes</h2>
-          <FormPerson :text1="inputT2" :text2="inputT1_2"></FormPerson>
-          <FormPerson :text1="inputT2" :text2="inputT1_2"></FormPerson>
-          <FormPerson :text1="inputT2" :text2="inputT1_2"></FormPerson>
+          <FormPerson/>
+          <FormPerson/>
+          <FormPerson/>
           <h2>Ubicación</h2>
-          <InputText2 :data="inputT2_2" />
+          <InputText2/>
           <h2>Tutor</h2>
-          <FormPerson :text1="inputT2_3" :text2="inputT1_3" ibg1="var(--sec)" ibg2="var(--sec)" sha="var(--sha3)"
-            sha2="var(--sec)">
-          </FormPerson>
+          <FormPerson ibg1="var(--sec)" ibg2="var(--sec)" sha="var(--sha3)" sha2="var(--sec)"/>
           <h2>Protocolo</h2>
-          <InputText :data="inputT1_4"></InputText>
+          <InputText/>
           <label>Estado</label>
-          <InputSwitch :data="inputS1_2" />
-          <InputFile :data="inputF1"></InputFile>
+          <InputSwitch/>
+          <InputFile/>
         </form>
       </main>
     </section>

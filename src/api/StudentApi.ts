@@ -5,6 +5,9 @@ import { Student } from "../interfaces/Student"
 // gets
 export const getStudents = async (): Promise<AxiosResponse<Student[]>> => await axios.get("/students")
 export const getStudent = async (id: string): Promise<AxiosResponse<Student>> => await axios.get("/students/id/" + id)
-//post
-export const addStudent = async (student: Student) => await axios.post("/students", student)
-
+// post
+export const addStudent = async (student: Student): Promise<AxiosResponse<Student>> => await axios.post("/students", student)
+// puts
+export const putStudent = async (id: string, student: Student): Promise<AxiosResponse<Student>> => await axios.put("/students/id/" + id, student)
+// delete
+export const deleteStudent = async (id: string): Promise<AxiosResponse<Student>> => await axios.delete("/student/id/" + id)

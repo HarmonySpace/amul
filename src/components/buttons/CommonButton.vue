@@ -18,7 +18,7 @@ const props = defineProps({
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem 1rem;
+    padding: 0.7rem 1rem;
   border: 0.1rem solid var(--fr);
   border-radius: 0.5rem;
   background-color: var(--void);
@@ -26,7 +26,7 @@ const props = defineProps({
 }
 
 .cb-cont:hover {
-  transform: scale(1.2);
+  transform: scale(0.9);
   cursor: pointer;
   border: 0.1rem solid var(--void);
   background-color: var(--acn);

@@ -3,7 +3,7 @@ import { ref, watch } from "vue"
 const props = defineProps({
   ph: {
     type: String,
-    default: "code"
+    default: ""
   },
   nm: {
     type: String,
