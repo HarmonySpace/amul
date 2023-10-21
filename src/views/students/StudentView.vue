@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue"
-import { useRouter } from "vue-router"
+import { navegateTo } from "../../routes/utils";
 import { Student } from "../../interfaces/Student"
 import { getStudents } from "../../api/StudentApi";
 import CommonButton2 from "../../components/buttons/CommonButton2.vue"
@@ -10,12 +10,8 @@ onMounted(() => {
   loadStudents()
 })
 
-const router = useRouter();
 const students = ref({} as Student[])
 
-const navegateTo = (to: string) => {
-  router.push(to)
-}
 const loadStudents = async () => {
   const res = await getStudents()
   students.value = res.data
@@ -34,14 +30,6 @@ const loadStudents = async () => {
       </header>
       <main class="container ls-main">
         <ul class="container ls-list">
-          <li class="container">
-            <IconPeople @click="navegateTo('/student/edit/5')"></IconPeople>
-            <main class="container student-data">
-              <h1>Rubén Emilio Flores Carrazco</h1>
-              <p>10-00000-0</p>
-            </main>
-          </li>
-          <h1>Mio</h1>
           <li v-for="student in students" :key="student._id" class="container">
             <IconPeople @click="navegateTo('/student/edit/' + student._id)"></IconPeople>
             <main class="container student-data">

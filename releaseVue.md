@@ -1,1 +1,16 @@
-loading ...
+- # Notas de la release
+	- Error solucionado en las peticiones `delete`
+	- Mejora en la experiencia del usuario en algunas vistas
+	- Mejora e los métodos de navegación entre componentes
+- # Api
+	- Se compuso la ruta `deleteStudent()` en las peticiones axios.
+- # Vistas
+	- Se asignó la funsion `navegateTo` al evento `handleUpdate` en el componente `src/views/students/EditStudent.vue`
+	- Se solucionó  un problema visual con los nombres
+	- Se agregó la función de limpiar campos en la vista `src/views/students/AddStudent.vue`
+	- Se compuso el formato del placeholder en las vistas `src/views/students/EditStudent.vue` y `src/views/students/AddStudent.vue`
+	- Se eliminó el icono de ayuda estático en la vista `src/views/students/StudentView.vue`
+	- Se creo la función `clearInputs()` en el archivo `src/views/students/AddStudent.vue`
+- # Navegación
+	- Se estableción el archivo `src/routes/utils.ts` para los metodos comúnes en las rutas y navegación de la página.
+	- Se creo el metodo `navegateTo()` para la navegación entre componentes.

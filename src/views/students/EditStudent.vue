@@ -73,11 +73,11 @@ const handleDelete = async () => {
         <p>Editar el estudiante <span>{{ $route.params.id }}</span></p>
       </header>
       <main class="container as-main">
-        <FormPerson @finput1="textChange1" @finput2="textChange2" @finput3="textChange3" ph="00-00000-0" nm="carnet_s"
+        <FormPerson @finput1="textChange1" @finput2="textChange2" @finput3="textChange3" ph="0-00000-0" nm="carnet_s"
           :ct="student.cardId" lb="Carnet" lg="small" ph1="John" nm1="nombre_s" lb1=" Nombres" :ct1="student.names"
           ph2="Doe" nm2="apellidos_s" lb2=" Apellidos" :ct2="student.lastnames" />
         <div class="container as-main-button">
-          <CommonButton2 msg="Añadir" @click="handlePut()"></CommonButton2>
+          <CommonButton2 msg="Actualizar" @click="handlePut()"></CommonButton2>
           <CommonButton msg="Borrar" @click="handleDelete()"></CommonButton>
         </div>
       </main>

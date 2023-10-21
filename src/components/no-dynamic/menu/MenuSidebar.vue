@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from "vue"
-import { useRouter } from "vue-router"
+import { navegateTo } from "../../../routes/utils";
 import IconMenu from "../../icons/IconMenu.vue"
 
 const props = defineProps({
@@ -14,7 +14,6 @@ watch(() => props.state, (change) => {
 })
 
 let menuState = ref(props.state)
-const router = useRouter()
 
 const updateFatherState = (newState: boolean) => {
   menuState.value = newState;
@@ -26,9 +25,6 @@ const closeMenu = () => {
 const toggleMenu = () => {
   menuState.value = !menuState.value
   emit("stateu", menuState.value)
-}
-const navegateTo = (to: string) => {
-  router.push(to)
 }
 </script>
 
