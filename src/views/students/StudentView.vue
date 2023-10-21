@@ -45,7 +45,7 @@ const loadStudents = async () => {
           <li v-for="student in students" :key="student._id" class="container">
             <IconPeople @click="navegateTo('/student/edit/' + student._id)"></IconPeople>
             <main class="container student-data">
-              <h1>{{ student.names + student.lastnames }}</h1>
+              <h1>{{ student.names + " " + student.lastnames }}</h1>
               <p>{{ student.cardId }}</p>
             </main>
           </li>
