@@ -7,6 +7,7 @@
   --bg2: #ececec;
   --bg3: #aeaeae;
   --bg4: #8e8e8e;
+  --bg5: #b3b3b3;
   --fr: #111111;
   --fr2: #1c1c1c;
   --fr3: #3f3d44;
@@ -97,6 +98,18 @@ label {
 .init-page-back {
   padding: 10vh 0 20vh 0;
 }
+.header-container {
+  flex-wrap: wrap;
+  justify-content: start;
+}
+.header-container h1 {
+  width: 100%;
+}
+
+.header-container {
+  justify-content: start;
+  margin-top: 3rem;
+}
 .icon-container {
   display: flex;
   justify-content: center;
@@ -135,6 +148,28 @@ label {
 }
 .back-arrow:hover {
   transform: rotate(180deg) scale(1.2);
+}
+
+.form-container {
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form-container .box:nth-child(1) {
+  align-items: center;
+  width: 20%;
+}
+
+.form-container .box:nth-child(2) {
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.form-container {
+  justify-content: end;
 }
 
 

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue"
 import { useRouter } from "vue-router"
+import { navegateTo } from "../../routes/utils";
 import { Student } from "../../interfaces/Student"
 import { getStudent, putStudent, deleteStudent } from "../../api/StudentApi"
 import FormPerson from "../../components/forms/FormPerson.vue"
@@ -11,10 +12,6 @@ import IconArrow from "../../components/icons/IconArrow.vue"
 const student = ref({} as Student)
 const router = useRouter();
 const currentR = router.currentRoute.value.params.id
-
-const navegateTo = (to: string) => {
-  router.push(to)
-}
 
 onMounted(() => {
   if (typeof currentR === `string`) {
@@ -37,6 +34,7 @@ const textChange2 = (input: string) => {
 const textChange3 = (input: string) => {
   student.value.cardId = input
 }
+
 const handlePut = async () => {
   console.log(student.value)
   if (!student.value.names && !student.value.lastnames && !student.value.cardId) {

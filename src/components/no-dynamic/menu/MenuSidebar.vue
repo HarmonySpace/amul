@@ -36,11 +36,8 @@ const toggleMenu = () => {
         <li class="menu-item" @click="navegateTo('/')">
           <router-link class="menu-link" ref="buscar" to="/">Buscar</router-link>
         </li>
-        <li class="menu-item" @click="navegateTo('/addmonograph')">
-          <router-link class="menu-link" ref="añadir" to="/addmonograph">Añadir</router-link>
-        </li>
-        <li class="menu-item" @click="navegateTo('/student/view')">
-          <router-link class="menu-link" ref="añadir estudiante" to="/student/view">Estudiantes</router-link>
+        <li class="menu-item" @click="navegateTo('/listelements')">
+          <router-link class="menu-link" ref="elementos" to="/listelements">Elementos</router-link>
         </li>
       </ul>
     </Transition>
