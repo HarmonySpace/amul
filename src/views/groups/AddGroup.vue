@@ -31,6 +31,7 @@ const saveGroup = async () => {
     const res = await addGroup(group.value)
     console.log(res)
     clearInputs()
+    navegateTo('/group/view')
   }
 }
 </script>

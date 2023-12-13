@@ -15,11 +15,11 @@ const currentR = router.currentRoute.value.params.id;
 
 onMounted(() => {
   if (typeof currentR === `string`) {
-    loadStudent(currentR);
+    loadGroup(currentR);
   }
 })
 
-const loadStudent = async (id: string) => {
+const loadGroup= async (id: string) => {
   const res = await getGroup(id);
   group.value = res.data;
   console.log(res);
@@ -37,9 +37,9 @@ const handlePut = async () => {
   if (!group.value.theme && !group.value.state) {
     console.log('please fill all camps to continue');
   } else if (!group.value.theme) {
-    console.log('no names');
+    console.log('no theme');
   } else if (!group.value.state) {
-    console.log('no lastnames');
+    console.log('no state');
   } else {
     const res = await putGroup(group.value._id, group.value)
     console.log(res);
@@ -60,7 +60,7 @@ const handleDelete = async () => {
     <main class="container init-page-back">
     <section class="limited">
       <IconArrow class="back-arrow" cl="var(--fr)" bg="var(--void)" bg2="var(--void)" sha="var(--void)" sha2="var(--void)"
-        @click="navegateTo('/student/view')"></IconArrow>
+        @click="navegateTo('/group/view')"></IconArrow>
       <header class="container as-header">
         <h1>Editar Grupo</h1>
         <p>Editar el grupo de investigacion <span>{{ $route.params.id }}</span></p>

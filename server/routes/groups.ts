@@ -47,6 +47,7 @@ router.get("/id/:id", async (req, res) => {
     if (!group) return res.status(404).send({ message: "ERROR: Group not found" });
     console.log("done");
     console.log(group);
+    res.json(group);
   } catch (e) {
     console.log(e)
   }

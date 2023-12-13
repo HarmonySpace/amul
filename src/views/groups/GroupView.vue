@@ -75,13 +75,14 @@ const loadGroups = async () => {
   justify-content: space-between;
 }
 
-.ls-main .student-data {
+.ls-main .group-data {
   flex-wrap: wrap;
   justify-content: start;
   margin-left: 5rem;
+  padding-right: 10rem;
 }
 
-.ls-main .student-data h1 {
+.ls-main .group-data h1 {
   font-size: 3rem;
   width: 100%;
 }

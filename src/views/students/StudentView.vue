@@ -79,6 +79,7 @@ const loadStudents = async () => {
   flex-wrap: wrap;
   justify-content: start;
   margin-left: 5rem;
+  padding-right: 10rem;
 }
 
 .ls-main .student-data h1 {

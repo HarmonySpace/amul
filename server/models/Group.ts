@@ -8,7 +8,7 @@ const groupSchema = new Schema({
   },
   state: {
     type: String,
-    enum: ["active", "inactive"],
+    enum: ["activo", "inactivo"],
     default: "active",
     require: true
   }

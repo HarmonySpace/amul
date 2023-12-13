@@ -8,6 +8,6 @@ export const getGroup = async (id: string): Promise<AxiosResponse<Group>> => awa
 //post
 export const addGroup = async (group: Group): Promise<AxiosResponse<Group>> => await axios.post("/groups", group);
 //put
-export const putGroup = async (id: string, group: Group): Promise<AxiosResponse<Group>> => await axios.post("/groups/id/" + id, group);
+export const putGroup = async (id: string, group: Group): Promise<AxiosResponse<Group>> => await axios.put("/groups/id/" + id, group);
 //delete
 export const deleteGroup = async (id: string): Promise<AxiosResponse<Group>> => await axios.delete("/groups/id/" + id);

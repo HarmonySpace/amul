@@ -37,6 +37,7 @@ const saveStudent = async () => {
     const res = await addStudent(student.value)
     console.log(res)
     clearInputs()
+    navegateTo('/student/view')
   }
 }
 </script>

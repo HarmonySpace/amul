@@ -83,7 +83,10 @@ label {
   display: flex;
   justify-content: center;
   align-items: start;
+  word-wrap: break-word;
+  hyphens: auto;
   width: 100%;
+  /* overflow-wrap: break-word; */
 }
 .limited {
   display: flex;
