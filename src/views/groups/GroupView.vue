@@ -5,6 +5,7 @@ import { Group } from "../../interfaces/Group"
 import { getGroups } from "../../api/GroupApi";
 import CommonButton2 from "../../components/buttons/CommonButton2.vue"
 import IconPeople from "../../components/icons/IconPeople.vue";
+import Main from "../../layouts/mainPage.vue";
 
 onMounted(() => {
   loadGroups();
@@ -19,28 +20,26 @@ const loadGroups = async () => {
 </script>
 
 <template>
-  <main class="container init-page">
-    <section class="limited">
-      <header class="container sv-header">
-        <h1>Grupos</h1>
-        <p>Vista de todos los grupos de investigación</p>
-        <div class="container sv-h-nav">
-          <CommonButton2 msg="Añadir" @click="navegateTo('/group/add')"></CommonButton2>
-        </div>
-      </header>
-      <main class="container ls-main">
-        <ul class="container ls-list">
-          <li v-for="group in groups" :key="group._id" class="container">
-            <IconPeople @click="navegateTo('/group/edit/' + group._id)"></IconPeople>
-            <main class="container group-data">
-              <h1>{{ group.theme }}</h1>
-              <p>{{ group.state }}</p>
-            </main>
-          </li>
-        </ul>
-      </main>
-    </section>
-  </main>
+  <Main>
+    <header class="container sv-header">
+      <h1>Grupos</h1>
+      <p>Vista de todos los grupos de investigación</p>
+      <div class="container sv-h-nav">
+        <CommonButton2 msg="Añadir" @click="navegateTo('/group/add')"></CommonButton2>
+      </div>
+    </header>
+    <main class="container ls-main">
+      <ul class="container ls-list">
+        <li v-for="group in groups" :key="group._id" class="container">
+          <IconPeople @click="navegateTo('/group/edit/' + group._id)"></IconPeople>
+          <main class="container group-data">
+            <h1>{{ group.theme }}</h1>
+            <p>{{ group.state }}</p>
+          </main>
+        </li>
+      </ul>
+    </main>
+  </Main>
 </template>
 
 <style>
@@ -99,4 +98,5 @@ const loadGroups = async () => {
 .ls-options {
   max-width: fit-content;
   gap: 1rem;
-}</style>
+}
+</style>

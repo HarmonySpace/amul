@@ -7,7 +7,7 @@ import { getStudent, putStudent, deleteStudent } from "../../api/StudentApi"
 import FormPerson from "../../components/forms/FormPerson.vue"
 import CommonButton from "../../components/buttons/CommonButton.vue"
 import CommonButton2 from "../../components/buttons/CommonButton2.vue"
-import IconArrow from "../../components/icons/IconArrow.vue"
+import Main from "../../layouts/mainPage.vue";
 
 const student = ref({} as Student)
 const router = useRouter();
@@ -46,41 +46,37 @@ const handlePut = async () => {
   } else if (!student.value.cardId) {
     console.log('no card id')
   } else {
-    const res = await putStudent(student.value._id ,student.value)
+    const res = await putStudent(student.value._id, student.value)
     console.log(res)
     navegateTo('/student/view')
   }
 }
 
 const handleDelete = async () => {
-  if (student.value._id){
+  if (student.value._id) {
     const res = await deleteStudent(student.value._id)
     console.log(res)
     navegateTo('/student/view')
-  }  
+  }
 }
 </script>
 
 <template>
-  <main class="container init-page-back">
-    <section class="limited">
-      <IconArrow class="back-arrow" cl="var(--fr)" bg="var(--void)" bg2="var(--void)" sha="var(--void)" sha2="var(--void)"
-        @click="navegateTo('/student/view')"></IconArrow>
-      <header class="container as-header">
-        <h1>Editar estudiante</h1>
-        <p>Editar el estudiante <span>{{ $route.params.id }}</span></p>
-      </header>
-      <main class="container as-main">
-        <FormPerson @finput1="textChange1" @finput2="textChange2" @finput3="textChange3" ph="0-00000-0" nm="carnet_s"
-          :ct="student.cardId" lb="Carnet" lg="small" ph1="John" nm1="nombre_s" lb1=" Nombres" :ct1="student.names"
-          ph2="Doe" nm2="apellidos_s" lb2=" Apellidos" :ct2="student.lastnames" />
-        <div class="container as-main-button">
-          <CommonButton2 msg="Actualizar" @click="handlePut()"></CommonButton2>
-          <CommonButton msg="Borrar" @click="handleDelete()"></CommonButton>
-        </div>
-      </main>
-    </section>
-  </main>
+  <Main back_page="/student/view">
+    <header class="container as-header">
+      <h1>Editar estudiante</h1>
+      <p>Editar el estudiante <span>{{ $route.params.id }}</span></p>
+    </header>
+    <main class="container as-main">
+      <FormPerson @finput1="textChange1" @finput2="textChange2" @finput3="textChange3" ph="0-00000-0" nm="carnet_s"
+        :ct="student.cardId" lb="Carnet" lg="small" ph1="John" nm1="nombre_s" lb1=" Nombres" :ct1="student.names"
+        ph2="Doe" nm2="apellidos_s" lb2=" Apellidos" :ct2="student.lastnames" />
+      <div class="container as-main-button">
+        <CommonButton2 msg="Actualizar" @click="handlePut()"></CommonButton2>
+        <CommonButton msg="Borrar" @click="handleDelete()"></CommonButton>
+      </div>
+    </main>
+  </Main>
 </template>
 
 <style scoped>

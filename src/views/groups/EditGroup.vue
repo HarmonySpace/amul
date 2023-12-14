@@ -7,7 +7,7 @@ import { getGroup, putGroup, deleteGroup } from "../../api/GroupApi";
 import FormGroup from "../../components/forms/FormGroup.vue";
 import CommonButton from "../../components/buttons/CommonButton.vue";
 import CommonButton2 from "../../components/buttons/CommonButton2.vue";
-import IconArrow from "../../components/icons/IconArrow.vue";
+import Main from "../../layouts/mainPage.vue";
 
 const group = ref({} as Group);
 const router = useRouter();
@@ -19,7 +19,7 @@ onMounted(() => {
   }
 })
 
-const loadGroup= async (id: string) => {
+const loadGroup = async (id: string) => {
   const res = await getGroup(id);
   group.value = res.data;
   console.log(res);
@@ -48,32 +48,29 @@ const handlePut = async () => {
 }
 
 const handleDelete = async () => {
-  if (group.value._id){
+  if (group.value._id) {
     const res = await deleteGroup(group.value._id);
     console.log(res);
     navegateTo('/group/view');
-  }  
+  }
 }
 </script>
 
 <template>
-    <main class="container init-page-back">
-    <section class="limited">
-      <IconArrow class="back-arrow" cl="var(--fr)" bg="var(--void)" bg2="var(--void)" sha="var(--void)" sha2="var(--void)"
-        @click="navegateTo('/group/view')"></IconArrow>
-      <header class="container as-header">
-        <h1>Editar Grupo</h1>
-        <p>Editar el grupo de investigacion <span>{{ $route.params.id }}</span></p>
-      </header>
-      <main class="container as-main">
-        <FormGroup @finput1="textChange1" @finput2="textChange2" lb1="Tema" lb2="Estado" ph1="Investigación sobre ..." ph2="activo"  nm1="theme_g" nm2="state_g" :ct1="group.theme" :ct2="group.state" />
-        <div class="container as-main-button">
-          <CommonButton2 msg="Actualizar" @click="handlePut()"></CommonButton2>
-          <CommonButton msg="Borrar" @click="handleDelete()"></CommonButton>
-        </div>
-      </main>
-    </section>
-  </main>
+  <Main back_page="/group/view">
+    <header class="container as-header">
+      <h1>Editar Grupo</h1>
+      <p>Editar el grupo de investigacion <span>{{ $route.params.id }}</span></p>
+    </header>
+    <main class="container as-main">
+      <FormGroup @finput1="textChange1" @finput2="textChange2" lb1="Tema" lb2="Estado" ph1="Investigación sobre ..."
+        ph2="activo" nm1="theme_g" nm2="state_g" :ct1="group.theme" :ct2="group.state" />
+      <div class="container as-main-button">
+        <CommonButton2 msg="Actualizar" @click="handlePut()"></CommonButton2>
+        <CommonButton msg="Borrar" @click="handleDelete()"></CommonButton>
+      </div>
+    </main>
+  </Main>
 </template>
 
 <style scoped>

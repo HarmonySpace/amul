@@ -5,7 +5,7 @@ import { Student } from "../../interfaces/Student"
 import { addStudent } from "../../api/StudentApi"
 import FormPerson from "../../components/forms/FormPerson.vue"
 import CommonButton from "../../components/buttons/CommonButton.vue"
-import IconArrow from "../../components/icons/IconArrow.vue"
+import Main from "../../layouts/mainPage.vue";
 
 const student = ref({} as Student)
 const textChange1 = (input: string) => {
@@ -43,24 +43,20 @@ const saveStudent = async () => {
 </script>
 
 <template>
-  <main class="container init-page-back">
-    <section class="limited">
-      <IconArrow class="back-arrow" cl="var(--fr)" bg="var(--void)" bg2="var(--void)" sha="var(--void)" sha2="var(--void)"
-      @click="navegateTo('/student/view')"></IconArrow>
-      <header class="container as-header">
-        <h1>Añadir estudiante</h1>
-        <p>Añadir un estudiante para tener registro en la base de datos</p>
-      </header>
-      <main class="container as-main">
-          <FormPerson @finput1="textChange1" @finput2="textChange2" @finput3="textChange3" ph="0-00000-0" nm="carnet_s"
-          :ct="student.cardId" lb="Carnet" lg="small" ph1="John" nm1="nombre_s" lb1=" Nombres" :ct1="student.names"
-          ph2="Doe" nm2="apellidos_s" lb2=" Apellidos" :ct2="student.lastnames" />
-        <div class="container as-main-button">
-          <CommonButton msg="Añadir" @click="saveStudent()"></CommonButton>
-        </div>
-      </main>
-    </section>
-  </main>
+  <Main back_page="/student/view">
+    <header class="container as-header">
+      <h1>Añadir estudiante</h1>
+      <p>Añadir un estudiante para tener registro en la base de datos</p>
+    </header>
+    <main class="container as-main">
+      <FormPerson @finput1="textChange1" @finput2="textChange2" @finput3="textChange3" ph="0-00000-0" nm="carnet_s"
+        :ct="student.cardId" lb="Carnet" lg="small" ph1="John" nm1="nombre_s" lb1=" Nombres" :ct1="student.names"
+        ph2="Doe" nm2="apellidos_s" lb2=" Apellidos" :ct2="student.lastnames" />
+      <div class="container as-main-button">
+        <CommonButton msg="Añadir" @click="saveStudent()"></CommonButton>
+      </div>
+    </main>
+  </Main>
 </template>
 
 <style scoped>
@@ -85,4 +81,5 @@ const saveStudent = async () => {
 
 .as-main-button {
   justify-content: end;
-}</style>
+}
+</style>

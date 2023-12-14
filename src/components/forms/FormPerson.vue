@@ -110,7 +110,7 @@ watch(() => text3.value, (change) => {
     <div class="container box">
       <InputText2 @input1="textChange1" @input2="textChange2" :ph1="props.ph1" :nm1="props.nm1" :ct1="props.ct1" :lb1="props.lb1"
         :ph2="props.ph2" :nm2="props.nm2" :ct2="props.ct2" :lb2="props.lb2" />
-      <InputText @iinput="textChange3" :ph="props.ph" :nm="props.nm" :lb="props.lb" :ct="props.ct" :lg="props.lg" :ty="props.ty" />
+      <InputText @input1="textChange3" :ph="props.ph" :nm="props.nm" :lb="props.lb" :ct="props.ct" :lg="props.lg" :ty="props.ty" />
     </div>
   </form>
 </template>

@@ -5,6 +5,7 @@ import { Student } from "../../interfaces/Student"
 import { getStudents } from "../../api/StudentApi";
 import CommonButton2 from "../../components/buttons/CommonButton2.vue"
 import IconPeople from "../../components/icons/IconPeople.vue";
+import Main from "../../layouts/mainPage.vue";
 
 onMounted(() => {
   loadStudents()
@@ -19,28 +20,26 @@ const loadStudents = async () => {
 </script>
 
 <template>
-  <main class="container init-page">
-    <section class="limited">
-      <header class="container sv-header">
-        <h1>Estudiantes</h1>
-        <p>Vista de todos los estudiantes</p>
-        <div class="container sv-h-nav">
-          <CommonButton2 msg="Añadir" @click="navegateTo('/student/add')"></CommonButton2>
-        </div>
-      </header>
-      <main class="container ls-main">
-        <ul class="container ls-list">
-          <li v-for="student in students" :key="student._id" class="container">
-            <IconPeople @click="navegateTo('/student/edit/' + student._id)"></IconPeople>
-            <main class="container student-data">
-              <h1>{{ student.names + " " + student.lastnames }}</h1>
-              <p>{{ student.cardId }}</p>
-            </main>
-          </li>
-        </ul>
-      </main>
-    </section>
-  </main>
+  <Main>
+    <header class="container sv-header">
+      <h1>Estudiantes</h1>
+      <p>Vista de todos los estudiantes</p>
+      <div class="container sv-h-nav">
+        <CommonButton2 msg="Añadir" @click="navegateTo('/student/add')"></CommonButton2>
+      </div>
+    </header>
+    <main class="container ls-main">
+      <ul class="container ls-list">
+        <li v-for="student in students" :key="student._id" class="container">
+          <IconPeople @click="navegateTo('/student/edit/' + student._id)"></IconPeople>
+          <main class="container student-data">
+            <h1>{{ student.names + " " + student.lastnames }}</h1>
+            <p>{{ student.cardId }}</p>
+          </main>
+        </li>
+      </ul>
+    </main>
+  </Main>
 </template>
 
 <style>
@@ -99,4 +98,5 @@ const loadStudents = async () => {
 .ls-options {
   max-width: fit-content;
   gap: 1rem;
-}</style>
+}
+</style>

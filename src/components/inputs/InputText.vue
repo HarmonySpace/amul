@@ -27,7 +27,7 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(["iinput"])
+const emit = defineEmits(["input1"])
 
 const content = ref<string>("")
 content.value = props.ct
@@ -47,7 +47,7 @@ watch(() => props.ct, (newValue) => {
 })
 
 const handleInput = () => {
-  emit("iinput", content.value)
+  emit("input1", content.value)
 } 
 </script>
 
