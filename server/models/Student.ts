@@ -1,4 +1,5 @@
 import { Schema, model } from "mongoose";
+import Group from "./Group"
 
 const studentSchema = new Schema({
   cardId: {
@@ -15,6 +16,10 @@ const studentSchema = new Schema({
   lastnames: {
     type: String,
     trim: true,
+    required: true
+  },
+  group: {
+    type: Schema.Types.ObjectId, ref: Group,
     required: true
   }
 });

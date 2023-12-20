@@ -1,5 +1,6 @@
 import { Router } from "express";
 import Student from "../models/Student";
+import { Schema } from "mongoose"
 
 const router = Router();
 
@@ -23,8 +24,8 @@ router.post("/", async (req, res) => {
   console.log("posting a student ...");
   try {
     console.log("take req values");
-    const { cardId, names, lastnames } = req.body;
-    const student = new Student({ cardId, names, lastnames });
+    const { cardId, names, lastnames, group } = req.body;
+    const student = new Student({ cardId, names, lastnames, group });
     console.log("saving in mongo");
     await student.save();
     if (!student) return res.status(501).send({ message: "ERROR: Student was not added" });

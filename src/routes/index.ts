@@ -1,10 +1,12 @@
 import { RouteRecordRaw, createRouter, createWebHistory } from "vue-router"
 import studentRoutes from "./students";
 import groupRoutes from "./groups";
+import testingRoutes from "./testing";
 
 const routes: RouteRecordRaw[] = [
   ...studentRoutes,
   ...groupRoutes,
+  ...testingRoutes,
   {
     alias: "/searchmonograph",
     path: "/",

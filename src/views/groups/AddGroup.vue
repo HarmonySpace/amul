@@ -2,7 +2,7 @@
 import { ref } from "vue"
 import { navegateTo } from "../../routes/utils"
 import { Group } from "../../interfaces/Group"
-import { addGroup } from "../../api/GroupApi.js"
+import { addGroup } from "../../api/GroupApi"
 import FormGroup from "../../components/forms/FormGroup.vue"
 import CommonButton from "../../components/buttons/CommonButton.vue"
 import Main from "../../layouts/mainPage.vue";
@@ -38,14 +38,14 @@ const saveGroup = async () => {
 
 <template>
   <Main back_page="/group/view">
-    <header class="container as-header">
+    <header class="container ag-header">
       <h1>Añadir grupo</h1>
-      <p>Añadir un grupo de investigación para tener registro en la base de datos</p>
+      <p>Añadir un grupo de investigación para tener registro en la bage de datos</p>
     </header>
-    <main class="container as-main">
+    <main clags="container ag-main">
       <FormGroup @finput1="textChange1" @finput2="textChange2" lb1="Tema" lb2="Estado" ph1="Investigación sobre ..."
         ph2="activo" nm1="theme_g" nm2="state_g" lg1="full" lg2="small" />
-      <div class="container as-main-button">
+      <div class="container ag-main-button">
         <CommonButton msg="Añadir" @click="saveGroup()"></CommonButton>
       </div>
     </main>
@@ -53,26 +53,26 @@ const saveGroup = async () => {
 </template>
 
 <style scoped>
-.as-header {
+.ag-header {
   flex-wrap: wrap;
   justify-content: start;
   align-items: center;
 }
 
-.as-header h1 {
+.ag-header h1 {
   width: 100%;
 }
 
-.as-header p {
+.ag-header p {
   margin-top: 1rem;
 }
 
-.as-main {
+.ag-main {
   margin-top: 5rem;
   flex-wrap: wrap;
 }
 
-.as-main-button {
+.ag-main-button {
   justify-content: end;
 }
 </style>
